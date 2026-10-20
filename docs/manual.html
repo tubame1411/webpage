@@ -383,7 +383,28 @@
           <p class="section-lead">左上のハンバーガーメニューから各画面を自由に切り替えることができます</p>
         </div>
 
-        <p>画面左上のハンバーガーアイコン（三本線）をタップすると、ドロワーメニューが開き、各画面への移動が可能です。</p>
+        <div class="drawer-menu-guide" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin: 20px 0; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 24px;">
+          <div style="flex: 0 0 160px; max-width: 160px; margin: 0 auto;">
+            <div class="phone-mockup" style="border-width: 6px; border-radius: 22px;">
+              <div class="phone-notch" style="height: 8px; width: 44px; top: 4px;"></div>
+              <img src="images/menu_screen.png" alt="ドロワーメニュー" class="phone-screen-img zoomable-img" title="クリックして拡大">
+            </div>
+            <div class="phone-hint" style="justify-content: center; margin-top: 6px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              拡大表示
+            </div>
+          </div>
+          <div style="flex: 1; min-width: 240px;">
+            <h4 style="margin-bottom: 8px; font-size: 1.05rem;">画面左上のメニューから各画面へワンタップ移動</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
+              画面左上のハンバーガーアイコン（<strong>三本線</strong>）をタップするとドロワーメニューが表示されます。
+              メイン画面、定型文設定、初期設定、交信ログ、エクスポート機能（アプリ内購入）、CSVインポート、ヘルプなど、全画面へいつでも自由に移動できます。
+            </p>
+          </div>
+        </div>
 
         <!-- ============================================================
              3.3 メイン画面 (詳細インタラクティブ)
@@ -561,58 +582,19 @@
           </p>
 
           <div class="screen-layout-split">
-            <!-- App Screen UI Mockup -->
-            <div class="mini-phone-frame">
-              <div class="mini-phone-header">
-                <span>初期設定</span>
-                <span style="font-size:0.75rem; font-weight:normal;">CW Log</span>
+            <!-- App Screen Real Screenshot -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/settings_screen.png" alt="CW Log 初期設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
               </div>
-              <div class="mini-phone-body">
-                <div class="mock-field">
-                  <span class="mock-label">自局コールサイン (MyCall)</span>
-                  <div class="mock-value">JA1ABC/1</div>
-                </div>
-                <div class="mock-field">
-                  <span class="mock-label">送付レポート (RSTs)</span>
-                  <div class="mock-value">599</div>
-                </div>
-                <div class="mock-field">
-                  <span class="mock-label">コンテスト番号 (Exchange)</span>
-                  <div class="mock-value">001</div>
-                </div>
-                <div style="display:flex; align-items:center; gap:8px; padding:4px 0;">
-                  <input type="checkbox" checked disabled>
-                  <span style="font-size:0.72rem; font-weight:600;">エクスチェンジを自動インクリメント</span>
-                </div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
-                  <div class="mock-field">
-                    <span class="mock-label">周波数 (Freq)</span>
-                    <div class="mock-value">7</div>
-                  </div>
-                  <div class="mock-field">
-                    <span class="mock-label">モード (Mode)</span>
-                    <div class="mock-value">CW</div>
-                  </div>
-                </div>
-                <div class="mock-field">
-                  <span class="mock-label">CW速度 (WPM)</span>
-                  <div class="mock-value">20</div>
-                </div>
-                <div class="mock-field">
-                  <span class="mock-label">JCC / 市番号</span>
-                  <div class="mock-value">1001</div>
-                </div>
-                <div class="mock-field">
-                  <span class="mock-label">POTA リファレンス</span>
-                  <div class="mock-value">JA-0001</div>
-                </div>
-                <div class="mock-field">
-                  <span class="mock-label">備考 1 (Note 1)</span>
-                  <div class="mock-value">POTA PK-001 IC-705</div>
-                </div>
-                <div class="mock-action-btn" style="margin-top:auto;">
-                  設定を保存してはじめる
-                </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
               </div>
             </div>
 
@@ -716,57 +698,19 @@
           </p>
 
           <div class="screen-layout-split">
-            <!-- App Screen UI Mockup for Presets -->
-            <div class="mini-phone-frame">
-              <div class="mini-phone-header">
-                <span>定型文設定</span>
-                <span style="font-size:0.75rem; font-weight:normal;">16 Presets</span>
+            <!-- App Screen Real Screenshot for Presets -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/preset_screen.png" alt="CW Log ボタン定型文の設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
               </div>
-              <div class="mini-phone-body">
-                <span style="font-size:0.7rem; font-weight:700; color:var(--text-muted);">マクロボタン配置 (4×4)</span>
-                <div class="mock-macro-grid">
-                  <div class="mock-macro-btn" style="background:#1976d2;">CQ</div>
-                  <div class="mock-macro-btn">DE</div>
-                  <div class="mock-macro-btn">GREET</div>
-                  <div class="mock-macro-btn">UR</div>
-                  <div class="mock-macro-btn">TU</div>
-                  <div class="mock-macro-btn">NR?</div>
-                  <div class="mock-macro-btn">AGN</div>
-                  <div class="mock-macro-btn">?</div>
-                  <div class="mock-macro-btn">MyCall</div>
-                  <div class="mock-macro-btn">HisCall</div>
-                  <div class="mock-macro-btn">F11</div>
-                  <div class="mock-macro-btn">F12</div>
-                  <div class="mock-macro-btn">BT</div>
-                  <div class="mock-macro-btn">AR</div>
-                  <div class="mock-macro-btn">KN</div>
-                  <div class="mock-macro-btn">VA</div>
-                </div>
-
-                <div class="mock-field" style="margin-top:4px;">
-                  <span class="mock-label">選択中のボタン: ボタン1 (CQ)</span>
-                  <div class="mock-value" style="font-size:0.75rem; color:var(--brand-blue);">CQ CQ DE {MyCall} {MyCall} K</div>
-                </div>
-
-                <div class="mock-field">
-                  <span class="mock-label">ボタン1 (CQ) 自動リピート設定</span>
-                  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2px;">
-                    <span style="font-size:0.75rem;">繰り返し送信:</span>
-                    <strong style="color:var(--accent-green); font-size:0.75rem;">ON (有効)</strong>
-                  </div>
-                  <div style="font-size:0.72rem; color:var(--text-muted); margin-top:2px;">
-                    間隔: 3 秒 / 送出回数: 無制限
-                  </div>
-                </div>
-
-                <div class="mock-field">
-                  <span class="mock-label">Checkボタン押下時の自動送信</span>
-                  <div class="mock-value" style="font-size:0.72rem;">{HisCall} {REPORT} {NUMBER}</div>
-                </div>
-
-                <div class="mock-action-btn" style="margin-top:auto;">
-                  定型文設定を保存
-                </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
               </div>
             </div>
 
@@ -801,72 +745,19 @@
           <p>端末内に保存されている全交信ログを一覧確認・編集できる画面です。</p>
 
           <div class="screen-layout-split">
-            <!-- App Screen UI Mockup for QSO Log -->
-            <div class="mini-phone-frame">
-              <div class="mini-phone-header">
-                <span>交信ログ</span>
-                <span
-                  style="background:#dc2626; color:#fff; font-size:0.68rem; padding:2px 6px; border-radius:4px;">一括削除</span>
+            <!-- App Screen Real Screenshot for QSO Log -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/log_screen.png" alt="CW Log ログ一覧画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
               </div>
-              <div class="mini-phone-body" style="padding:10px 8px;">
-                <div
-                  style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; font-weight:700; padding:0 4px;">
-                  <span>全交信数: 6 件</span>
-                  <span style="color:var(--brand-blue);">フィルタ: 全て</span>
-                </div>
-
-                <table class="mock-log-table">
-                  <thead>
-                    <tr>
-                      <th>操作</th>
-                      <th>相手局</th>
-                      <th>日時</th>
-                      <th>Freq/Mode</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>✏️ 🗑️</td>
-                      <td><strong>JA1XYZ</strong></td>
-                      <td>26/10/16 21:30</td>
-                      <td>7 CW (599)</td>
-                    </tr>
-                    <tr>
-                      <td>✏️ 🗑️</td>
-                      <td><strong>JH2ABC</strong></td>
-                      <td>26/10/16 21:38</td>
-                      <td>7 CW (599)</td>
-                    </tr>
-                    <tr>
-                      <td>✏️ 🗑️</td>
-                      <td><strong>JR3DEF</strong></td>
-                      <td>26/10/16 21:45</td>
-                      <td>7 CW (599)</td>
-                    </tr>
-                    <tr>
-                      <td>✏️ 🗑️</td>
-                      <td><strong>7K4GHI</strong></td>
-                      <td>26/10/16 21:52</td>
-                      <td>7 CW (599)</td>
-                    </tr>
-                    <tr>
-                      <td>✏️ 🗑️</td>
-                      <td><strong>JM1JKL</strong></td>
-                      <td>26/10/16 22:01</td>
-                      <td>7 CW (599)</td>
-                    </tr>
-                    <tr>
-                      <td>✏️ 🗑️</td>
-                      <td><strong>JG1ZOO</strong></td>
-                      <td>26/10/16 22:10</td>
-                      <td>7 CW (599)</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div style="font-size:0.7rem; color:var(--text-muted); text-align:center; margin-top:auto; padding-top:8px;">
-                  ※行をタップまたは鉛筆で編集、ゴミ箱で削除<br>
-                  （左右スワイプで全項目スクロール可能）
-                </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
               </div>
             </div>
 
