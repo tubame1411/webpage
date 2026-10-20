@@ -599,10 +599,18 @@
                   <div class="mock-value">20</div>
                 </div>
                 <div class="mock-field">
+                  <span class="mock-label">JCC / 市番号</span>
+                  <div class="mock-value">1001</div>
+                </div>
+                <div class="mock-field">
                   <span class="mock-label">POTA リファレンス</span>
                   <div class="mock-value">JA-0001</div>
                 </div>
-                <div class="mock-action-btn" style="margin-top:6px;">
+                <div class="mock-field">
+                  <span class="mock-label">備考 1 (Note 1)</span>
+                  <div class="mock-value">POTA PK-001 IC-705</div>
+                </div>
+                <div class="mock-action-btn" style="margin-top:auto;">
                   設定を保存してはじめる
                 </div>
               </div>
@@ -717,7 +725,7 @@
               <div class="mini-phone-body">
                 <span style="font-size:0.7rem; font-weight:700; color:var(--text-muted);">マクロボタン配置 (4×4)</span>
                 <div class="mock-macro-grid">
-                  <div class="mock-macro-btn">CQ</div>
+                  <div class="mock-macro-btn" style="background:#1976d2;">CQ</div>
                   <div class="mock-macro-btn">DE</div>
                   <div class="mock-macro-btn">GREET</div>
                   <div class="mock-macro-btn">UR</div>
@@ -735,20 +743,29 @@
                   <div class="mock-macro-btn">VA</div>
                 </div>
 
-                <div class="mock-field" style="margin-top:6px;">
-                  <span class="mock-label">ボタン1 (CQ) リピート設定</span>
+                <div class="mock-field" style="margin-top:4px;">
+                  <span class="mock-label">選択中のボタン: ボタン1 (CQ)</span>
+                  <div class="mock-value" style="font-size:0.75rem; color:var(--brand-blue);">CQ CQ DE {MyCall} {MyCall} K</div>
+                </div>
+
+                <div class="mock-field">
+                  <span class="mock-label">ボタン1 (CQ) 自動リピート設定</span>
                   <div style="display:flex; justify-content:space-between; align-items:center; margin-top:2px;">
-                    <span style="font-size:0.75rem;">自動繰り返し:</span>
-                    <strong style="color:var(--accent-green); font-size:0.75rem;">ON</strong>
+                    <span style="font-size:0.75rem;">繰り返し送信:</span>
+                    <strong style="color:var(--accent-green); font-size:0.75rem;">ON (有効)</strong>
                   </div>
                   <div style="font-size:0.72rem; color:var(--text-muted); margin-top:2px;">
-                    間隔: 3秒 / 回数: 無制限
+                    間隔: 3 秒 / 送出回数: 無制限
                   </div>
                 </div>
 
                 <div class="mock-field">
-                  <span class="mock-label">Checkボタン押下時の送信内容</span>
+                  <span class="mock-label">Checkボタン押下時の自動送信</span>
                   <div class="mock-value" style="font-size:0.72rem;">{HisCall} {REPORT} {NUMBER}</div>
+                </div>
+
+                <div class="mock-action-btn" style="margin-top:auto;">
+                  定型文設定を保存
                 </div>
               </div>
             </div>
@@ -794,7 +811,7 @@
               <div class="mini-phone-body" style="padding:10px 8px;">
                 <div
                   style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; font-weight:700; padding:0 4px;">
-                  <span>全交信数: 3 件</span>
+                  <span>全交信数: 6 件</span>
                   <span style="color:var(--brand-blue);">フィルタ: 全て</span>
                 </div>
 
@@ -826,10 +843,29 @@
                       <td>26/10/16 21:45</td>
                       <td>7 CW (599)</td>
                     </tr>
+                    <tr>
+                      <td>✏️ 🗑️</td>
+                      <td><strong>7K4GHI</strong></td>
+                      <td>26/10/16 21:52</td>
+                      <td>7 CW (599)</td>
+                    </tr>
+                    <tr>
+                      <td>✏️ 🗑️</td>
+                      <td><strong>JM1JKL</strong></td>
+                      <td>26/10/16 22:01</td>
+                      <td>7 CW (599)</td>
+                    </tr>
+                    <tr>
+                      <td>✏️ 🗑️</td>
+                      <td><strong>JG1ZOO</strong></td>
+                      <td>26/10/16 22:10</td>
+                      <td>7 CW (599)</td>
+                    </tr>
                   </tbody>
                 </table>
-                <div style="font-size:0.7rem; color:var(--text-muted); text-align:center; margin-top:8px;">
-                  ※行をタップまたは鉛筆で編集、ゴミ箱で削除
+                <div style="font-size:0.7rem; color:var(--text-muted); text-align:center; margin-top:auto; padding-top:8px;">
+                  ※行をタップまたは鉛筆で編集、ゴミ箱で削除<br>
+                  （左右スワイプで全項目スクロール可能）
                 </div>
               </div>
             </div>
@@ -875,15 +911,26 @@
                   <label><input type="radio" name="mock_fmt" disabled> ADIF (.adi)</label>
                 </div>
 
-                <span style="font-size:0.72rem; font-weight:700; margin-top:4px;">2. フィルター</span>
+                <span style="font-size:0.72rem; font-weight:700; margin-top:2px;">2. 文字コード</span>
+                <div style="display:flex; gap:12px; font-size:0.78rem;">
+                  <label><input type="radio" name="mock_enc" checked disabled> Shift-JIS (推奨)</label>
+                  <label><input type="radio" name="mock_enc" disabled> UTF-8</label>
+                </div>
+
+                <span style="font-size:0.72rem; font-weight:700; margin-top:2px;">3. フィルター</span>
                 <div style="display:flex; flex-direction:column; gap:4px; font-size:0.72rem;">
                   <label><input type="checkbox" checked disabled> インポートデータを除外</label>
                   <label><input type="checkbox" checked disabled> エクスポート済を除外</label>
                 </div>
 
-                <div class="mock-field" style="margin-top:4px;">
+                <div class="mock-field" style="margin-top:2px;">
                   <span class="mock-label">対象日付 (交信数)</span>
-                  <div style="font-size:0.75rem;">☑ 2026/10/16 (3 件)</div>
+                  <div style="font-size:0.75rem;">☑ 2026/10/16 (6 件)</div>
+                </div>
+
+                <div class="mock-field">
+                  <span class="mock-label">出力先フォルダ</span>
+                  <div class="mock-value" style="font-size:0.72rem;">/Download/CWLog/</div>
                 </div>
 
                 <div class="mock-field">
@@ -891,7 +938,7 @@
                   <div class="mock-value" style="font-size:0.75rem;">Ido_261016_20261016.csv</div>
                 </div>
 
-                <div class="mock-action-btn" style="background:#10b981; margin-top:4px;">
+                <div class="mock-action-btn" style="background:#10b981; margin-top:auto;">
                   エクスポート実行
                 </div>
               </div>
