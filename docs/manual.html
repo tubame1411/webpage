@@ -789,49 +789,19 @@
           </h3>
 
           <div class="screen-layout-split">
-            <!-- App Screen UI Mockup for Export -->
-            <div class="mini-phone-frame">
-              <div class="mini-phone-header">
-                <span>エクスポート</span>
-                <span style="font-size:0.75rem; font-weight:normal;">Export</span>
+            <!-- App Screen Real Screenshot for Export -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/export_screen.png" alt="CW Log エクスポート設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
               </div>
-              <div class="mini-phone-body">
-                <span style="font-size:0.72rem; font-weight:700;">1. 出力形式</span>
-                <div style="display:flex; gap:12px; font-size:0.78rem;">
-                  <label><input type="radio" name="mock_fmt" checked disabled> CSV (ハムログ)</label>
-                  <label><input type="radio" name="mock_fmt" disabled> ADIF (.adi)</label>
-                </div>
-
-                <span style="font-size:0.72rem; font-weight:700; margin-top:2px;">2. 文字コード</span>
-                <div style="display:flex; gap:12px; font-size:0.78rem;">
-                  <label><input type="radio" name="mock_enc" checked disabled> Shift-JIS (推奨)</label>
-                  <label><input type="radio" name="mock_enc" disabled> UTF-8</label>
-                </div>
-
-                <span style="font-size:0.72rem; font-weight:700; margin-top:2px;">3. フィルター</span>
-                <div style="display:flex; flex-direction:column; gap:4px; font-size:0.72rem;">
-                  <label><input type="checkbox" checked disabled> インポートデータを除外</label>
-                  <label><input type="checkbox" checked disabled> エクスポート済を除外</label>
-                </div>
-
-                <div class="mock-field" style="margin-top:2px;">
-                  <span class="mock-label">対象日付 (交信数)</span>
-                  <div style="font-size:0.75rem;">☑ 2026/10/16 (6 件)</div>
-                </div>
-
-                <div class="mock-field">
-                  <span class="mock-label">出力先フォルダ</span>
-                  <div class="mock-value" style="font-size:0.72rem;">/Download/CWLog/</div>
-                </div>
-
-                <div class="mock-field">
-                  <span class="mock-label">出力ファイル名</span>
-                  <div class="mock-value" style="font-size:0.75rem;">Ido_261016_20261016.csv</div>
-                </div>
-
-                <div class="mock-action-btn" style="background:#10b981; margin-top:auto;">
-                  エクスポート実行
-                </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
               </div>
             </div>
 
