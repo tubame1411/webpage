@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CW Log for portable operation | 取扱説明書 (マニュアル)</title>
-  <meta name="description" content="スマートフォン向けアマチュア無線 CW（電信）移動運用ロギング＆キーヤー制御アプリケーション「CW Log for portable operation」（アプリ名：CW Log / I DO）の公式オンライン取扱説明書です。画面構成、Winkey接続、定型文マクロ、Turbo HAMLOG連携を詳しく解説。">
+  <meta name="description"
+    content="スマートフォン向けアマチュア無線 CW（電信）移動運用ロギング＆キーヤー制御アプリケーション「CW Log for portable operation」の公式オンライン取扱説明書です。画面構成、Winkey接続、定型文マクロ、Turbo HAMLOG連携を詳しく解説。">
   <link rel="icon" type="image/png" href="images/app_icon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
   <!-- ======================================================================
@@ -31,7 +36,8 @@
       <div class="header-actions">
         <!-- Search -->
         <div class="search-wrapper">
-          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
@@ -41,7 +47,8 @@
         <!-- Theme Toggle -->
         <button id="theme-toggle-btn" class="icon-btn" aria-label="テーマ切り替え" title="ダーク/ライトモード切り替え">
           <span id="theme-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </span>
@@ -49,7 +56,8 @@
 
         <!-- Mobile Menu Toggle -->
         <button id="menu-toggle-btn" class="icon-btn menu-toggle-btn" aria-label="目次メニュー" title="目次を開く">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -76,26 +84,37 @@
 
         <div class="hero-tags">
           <span class="hero-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
             USB-OTG キーヤー直結
           </span>
           <span class="hero-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
             即時重複交信(B4)判定
           </span>
           <span class="hero-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
             16個のマクロ定型文
           </span>
           <span class="hero-tag">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
             Turbo HAMLOG・ADIF完全対応
           </span>
         </div>
 
         <div class="hero-actions">
           <a href="#section-3-3" class="btn btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
             メイン画面の解説を見る
           </a>
           <a href="#section-2" class="btn btn-secondary">
@@ -121,7 +140,14 @@
     <!-- Sticky Sidebar (Table of Contents) -->
     <aside id="sidebar" class="sidebar">
       <div class="toc-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
         目次
       </div>
       <ul class="toc-list">
@@ -162,13 +188,25 @@
         </div>
 
         <p>
-          「<strong>CW Log for portable operation</strong>」は、POTA（Parks on the Air）、SOTA（Summits on the Air）、各種コンテスト、移動サービス等の電信（CW）運用を、スマートフォン単体＋外付けキーヤーで軽快・確実にこなすために開発されたロギング＆キーヤー制御アプリです。
+          「<strong>CW Log for portable operation</strong>」は、POTA（Parks on the Air）、SOTA（Summits on the
+          Air）、各種コンテスト、移動サービス等の電信（CW）運用を、スマートフォン単体＋外付けキーヤーで軽快・確実にこなすために開発されたロギング＆キーヤー制御アプリです。
         </p>
 
         <div class="card-grid">
           <div class="feature-card">
             <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+              </svg>
             </div>
             <h3>USBダイレクトキーヤー制御</h3>
             <p>Arduino KeyerなどのK1EL Winkey互換キーヤーをUSB-OTGで直結し、PCレスで安定したCW送出を実現します。</p>
@@ -176,7 +214,10 @@
 
           <div class="feature-card">
             <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
             </div>
             <h3>重複交信チェック (B4判定)</h3>
             <p>コールサインを入力してCheckを押すだけで、過去ログから同一バンド・モード・日付の重複を瞬時に判定・通知します。</p>
@@ -184,7 +225,10 @@
 
           <div class="feature-card">
             <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
             </div>
             <h3>CQ自動リピート送出</h3>
             <p>ボタン1（CQ）はインターバル設定（2〜10秒）と回数指定による自動リピート送出に対応。相手局の応答に素早く集中できます。</p>
@@ -192,7 +236,10 @@
 
           <div class="feature-card">
             <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
             </div>
             <h3>動的タグ置換マクロ</h3>
             <p>自局/相手局コールサイン、RST、コンテスト番号、QTH、リファレンス（POTA/SOTA）等を自動展開して送信します。</p>
@@ -200,7 +247,13 @@
 
           <div class="feature-card">
             <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
             </div>
             <h3>Turbo HAMLOG・ADIF互換</h3>
             <p>Shift-JIS形式のHAMLOG互換CSVエクスポート・インポート、および世界標準のADIF（.adi）エクスポートに対応。</p>
@@ -208,7 +261,10 @@
 
           <div class="feature-card">
             <div class="feature-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
             </div>
             <h3>連番自動インクリメント</h3>
             <p>コンテスト等で便利なエクスチェンジ番号（001、002...）の自動カウントアップ機能を標準装備。</p>
@@ -266,9 +322,14 @@
         </div>
 
         <div class="callout callout-warning">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
           <div>
-            <strong>注意（ケーブルの選定）:</strong> 100円ショップ等で販売されているケーブルの中には「充電専用」が存在します。充電専用ケーブルではキーヤーと通信できません。必ず<strong>「充電・データ通信両対応」</strong>のUSBケーブルまたはOTGアダプターをご使用ください。
+            <strong>注意（ケーブルの選定）:</strong>
+            100円ショップ等で販売されているケーブルの中には「充電専用」が存在します。充電専用ケーブルではキーヤーと通信できません。必ず<strong>「充電・データ通信両対応」</strong>のUSBケーブルまたはOTGアダプターをご使用ください。
           </div>
         </div>
 
@@ -289,7 +350,9 @@
           <li class="step-item">
             <div class="step-text">
               <h4>画面上部の「接続」ボタンをタップ</h4>
-              <p>画面右上にあるグレー色の <span style="background:#6b7280; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続</span> ボタンをタップします。</p>
+              <p>画面右上にあるグレー色の <span
+                  style="background:#6b7280; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続</span>
+                ボタンをタップします。</p>
             </div>
           </li>
           <li class="step-item">
@@ -301,7 +364,9 @@
           <li class="step-item">
             <div class="step-text">
               <h4>接続完了（青色「接続中」に変化）</h4>
-              <p>キーヤーとシリアル通信ハンドシェイクが成立すると、ボタンが青色の <span style="background:#1976d2; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続中</span> に変化します。これでキーヤー制御の準備が整いました。</p>
+              <p>キーヤーとシリアル通信ハンドシェイクが成立すると、ボタンが青色の <span
+                  style="background:#1976d2; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続中</span>
+                に変化します。これでキーヤー制御の準備が整いました。</p>
             </div>
           </li>
         </ol>
@@ -334,22 +399,26 @@
 
           <!-- Interactive Showcase -->
           <div class="interactive-showcase">
-            
+
             <!-- Left: Mockup Phone Frame with main_screen.png -->
             <div class="phone-mockup-wrapper">
               <div class="phone-mockup">
                 <div class="phone-notch"></div>
-                <img src="images/main_screen.png" alt="CW Log メイン画面 (番号付き)" class="phone-screen-img zoomable-img" id="main-screen-preview" title="クリックして大画面で拡大">
+                <img src="images/main_screen.png" alt="CW Log メイン画面 (番号付き)" class="phone-screen-img zoomable-img"
+                  id="main-screen-preview" title="クリックして大画面で拡大">
               </div>
               <div class="phone-hint">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
                 画像クリックで高解像度拡大表示
               </div>
             </div>
 
             <!-- Right: Breakdown Feature Cards -->
             <div class="feature-breakdown-list">
-              
+
               <!-- 1 -->
               <div class="breakdown-card" id="feat-1">
                 <div class="breakdown-header">
@@ -414,7 +483,8 @@
                   <ul>
                     <li><strong>重複チェック (B4)</strong>: 同一バンド・モード・日付の重複を瞬時に判定。交信済みの場合は <code>相手局 B4</code> を自動送出。</li>
                     <li><strong>未交信時</strong>: 「チェックのみ」がOFFの場合、相手コール＋レポート/エクスチェンジを自動送出。</li>
-                    <li><strong>不確かなコール (?機能)</strong>: 末尾に <code>?</code> が付いている場合（例: <code>JA1?</code>）はコールサインのみ送出して確認。</li>
+                    <li><strong>不確かなコール (?機能)</strong>: 末尾に <code>?</code> が付いている場合（例:
+                      <code>JA1?</code>）はコールサインのみ送出して確認。</li>
                     <li><strong>自動フォーカス移動</strong>: 自動的に受領レポート欄（RSTr）にカーソルが移動します。</li>
                   </ul>
                 </div>
@@ -466,7 +536,9 @@
                 </div>
                 <div class="breakdown-body">
                   <ul>
-                    <li><strong>登録 (緑)</strong>: 入力した交信データを内部データベースに保存。保存後、入力欄がリセットされ、カーソルは次の交信に備えて「HisCall」欄に自動復帰します（自動インクリメント有効時はエクスチェンジ番号が自動で+1されます）。</li>
+                    <li><strong>登録 (緑)</strong>:
+                      入力した交信データを内部データベースに保存。保存後、入力欄がリセットされ、カーソルは次の交信に備えて「HisCall」欄に自動復帰します（自動インクリメント有効時はエクスチェンジ番号が自動で+1されます）。
+                    </li>
                     <li><strong>クリア (灰)</strong>: 保存せずに入力欄をリフレッシュします。</li>
                   </ul>
                 </div>
@@ -568,7 +640,8 @@
                   </tr>
                   <tr>
                     <td><strong>コンテスト名</strong></td>
-                    <td>参加中のコンテスト名や運用名称。<code class="copy-tag" data-copy="{CONTEST_NAME}">{CONTEST_NAME}</code> に置換されます。</td>
+                    <td>参加中のコンテスト名や運用名称。<code class="copy-tag" data-copy="{CONTEST_NAME}">{CONTEST_NAME}</code> に置換されます。
+                    </td>
                     <td><code>ALL JA</code>, <code>TEST</code></td>
                   </tr>
                   <tr>
@@ -683,7 +756,8 @@
             <div class="card-grid" style="margin:0;">
               <div class="feature-card">
                 <h3>1. ボタン名 & 送信内容</h3>
-                <p>各ボタンのラベル（最大8文字程度）と、タップ時に送出するCW文字列を設定します。<code>{MyCall}</code> や <code>{REPORT}</code> などの動的タグを自在に埋め込めます。</p>
+                <p>各ボタンのラベル（最大8文字程度）と、タップ時に送出するCW文字列を設定します。<code>{MyCall}</code> や <code>{REPORT}</code>
+                  などの動的タグを自在に埋め込めます。</p>
               </div>
               <div class="feature-card">
                 <h3>2. Checkボタン送信内容</h3>
@@ -713,10 +787,12 @@
             <div class="mini-phone-frame">
               <div class="mini-phone-header">
                 <span>交信ログ</span>
-                <span style="background:#dc2626; color:#fff; font-size:0.68rem; padding:2px 6px; border-radius:4px;">一括削除</span>
+                <span
+                  style="background:#dc2626; color:#fff; font-size:0.68rem; padding:2px 6px; border-radius:4px;">一括削除</span>
               </div>
               <div class="mini-phone-body" style="padding:10px 8px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; font-weight:700; padding:0 4px;">
+                <div
+                  style="display:flex; justify-content:space-between; align-items:center; font-size:0.75rem; font-weight:700; padding:0 4px;">
                   <span>全交信数: 3 件</span>
                   <span style="color:var(--brand-blue);">フィルタ: 全て</span>
                 </div>
@@ -780,7 +856,8 @@
              ============================================================ -->
         <div id="section-3-5" class="subsection">
           <h3 class="subsection-title">
-            <span style="color:var(--brand-blue);">3.5</span> エクスポート画面 & <span style="color:var(--brand-blue);">3.6</span> CSVインポート
+            <span style="color:var(--brand-blue);">3.5</span> エクスポート画面 & <span
+              style="color:var(--brand-blue);">3.6</span> CSVインポート
           </h3>
 
           <div class="screen-layout-split">
@@ -989,7 +1066,7 @@
         <div class="workflow-container">
           <h3 style="font-size:1.1rem; font-weight:700;">標準QSOステップ</h3>
           <div class="workflow-steps">
-            
+
             <div class="workflow-step-card">
               <div class="workflow-step-badge">1</div>
               <div class="workflow-step-content">
@@ -1018,7 +1095,8 @@
               <div class="workflow-step-badge">4</div>
               <div class="workflow-step-content">
                 <h4>Check & レポート送出</h4>
-                <p><strong>Check</strong> ボタンをタップ。日時が自動記録され、未交信であれば相手コール＋レポート（例: <code>JA1XYZ 599 BK</code>）が自動送出されます。カーソルは受領レポート欄（RSTr）に自動ジャンプします。</p>
+                <p><strong>Check</strong> ボタンをタップ。日時が自動記録され、未交信であれば相手コール＋レポート（例:
+                  <code>JA1XYZ 599 BK</code>）が自動送出されます。カーソルは受領レポート欄（RSTr）に自動ジャンプします。</p>
               </div>
             </div>
 
@@ -1056,17 +1134,25 @@
         <div class="tips-grid">
           <div class="tip-card">
             <h4 class="tip-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83">
+                </path>
+              </svg>
               キーボードの大文字固定 (Caps Lock)
             </h4>
             <p class="tip-desc">
-              コールサイン入力時、Androidの英字キーボードで上矢印キー（Shiftキー）を素早く<strong>2回連続タップ</strong>すると、Caps Lock（大文字固定）になります。小文字混じりの誤入力を防ぎ、入力効率が格段に向上します。
+              コールサイン入力時、Androidの英字キーボードで上矢印キー（Shiftキー）を素早く<strong>2回連続タップ</strong>すると、Caps
+              Lock（大文字固定）になります。小文字混じりの誤入力を防ぎ、入力効率が格段に向上します。
             </p>
           </div>
 
           <div class="tip-card">
             <h4 class="tip-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
               RST欄の自動クリア機能
             </h4>
             <p class="tip-desc">
@@ -1076,7 +1162,11 @@
 
           <div class="tip-card">
             <h4 class="tip-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
               コールサインが不確かな時の「?」機能
             </h4>
             <p class="tip-desc">
@@ -1086,7 +1176,10 @@
 
           <div class="tip-card">
             <h4 class="tip-title">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><polyline points="9 11 12 14 22 4"></polyline></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <polyline points="9 11 12 14 22 4"></polyline>
+              </svg>
               「チェックのみ」の賢い活用法
             </h4>
             <p class="tip-desc">
@@ -1108,16 +1201,21 @@
         </div>
 
         <div class="faq-accordion">
-          
+
           <div class="faq-item">
             <button class="faq-question">
               <span>Q1. 「接続」ボタンを押しても「No USB devices found」と出る / 接続できない</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-answer">
               <ul>
                 <li><strong>原因1:</strong> ケーブルが「充電専用」になっている可能性があります。必ず「データ通信対応」のUSBケーブルおよびOTGアダプターをご使用ください。</li>
-                <li><strong>原因2:</strong> Android端末の「OTG接続」がシステム設定で無効化されている場合があります（一部のOPPOやvivoなどの端末では、「設定」→「その他の設定」または「システム」→「OTG接続」を手動でONにする必要があります）。</li>
+                <li><strong>原因2:</strong>
+                  Android端末の「OTG接続」がシステム設定で無効化されている場合があります（一部のOPPOやvivoなどの端末では、「設定」→「その他の設定」または「システム」→「OTG接続」を手動でONにする必要があります）。
+                </li>
                 <li><strong>原因3:</strong> USBキーヤーのシリアル変換チップが給電不足の可能性があります。セルフパワーハブ等を介して給電をお試しください。</li>
               </ul>
             </div>
@@ -1126,7 +1224,10 @@
           <div class="faq-item">
             <button class="faq-question">
               <span>Q2. CW送信が途中で止まらない / 送信が暴走した</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-answer">
               画面右上の <strong>「STOP」ボタン（赤色）</strong> をタップしてください。即座にキーヤーへ中断コマンド（0x0A）が発行され、CW送信およびCQリピートが強制停止されます。
@@ -1136,7 +1237,10 @@
           <div class="faq-item">
             <button class="faq-question">
               <span>Q3. 「準備ができていません (同期が必要です)」と表示されて送信できない</span>
-              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
             </button>
             <div class="faq-answer">
               USBキーヤーとのシリアル通信ハンドシェイクが完了していません。画面右上のボタンが青色「接続中」になっているかご確認ください。一度ケーブルを抜き差しして再度「接続」ボタンをタップしてください。
@@ -1160,7 +1264,8 @@
         <div class="terms-box">
           <div class="terms-article">
             <h4>第1条（データの管理と自己責任）</h4>
-            <p>1. 本アプリが扱う無線通信ログ等のデータ（以下、「ユーザーデータ」といいます）は、ユーザーの端末内にのみ保存されます。開発者がサーバー等でユーザーデータをバックアップまたは同期する仕組みは提供しておりません。</p>
+            <p>1. 本アプリが扱う無線通信ログ等のデータ（以下、「ユーザーデータ」といいます）は、ユーザーの端末内にのみ保存されます。開発者がサーバー等でユーザーデータをバックアップまたは同期する仕組みは提供しておりません。
+            </p>
             <p>2. 端末の紛失、故障、機種変更、アプリの削除、またはその他の事由によりユーザーデータが消失した場合、開発者は復旧の義務を負わず、これにより生じた損害について一切の責任を負いません。</p>
             <p>3. ユーザーは、大切なデータを保護するため、本アプリのエクスポート機能等を利用し、定期的に外部へバックアップを保存するなど、自己の責任においてデータを管理するものとします。</p>
           </div>
@@ -1168,7 +1273,9 @@
           <div class="terms-article">
             <h4>第2条（免責事項・サービスの非保証）</h4>
             <p>1. 開発者は、本アプリがユーザーの特定の目的に適合すること、期待する機能・正確性・有用性を有すること、および不具合が生じないことについて、明示的にも黙示的にも一切保証しません。</p>
-            <p>2. 本アプリのエクスポート機能によって出力されたデータについて、他社製のログ管理ソフト、外部の無線サービス（LoTW、eQSL等）、アワード申請システム等との完全な互換性や正確な読み込みを保証するものではありません。</p>
+            <p>2.
+              本アプリのエクスポート機能によって出力されたデータについて、他社製のログ管理ソフト、外部の無線サービス（LoTW、eQSL等）、アワード申請システム等との完全な互換性や正確な読み込みを保証するものではありません。
+            </p>
             <p>3. 本アプリの利用、または利用できなかったことによりユーザーまたは第三者に生じた損害について、開発者は一切の責任を負いません。</p>
           </div>
 
@@ -1198,7 +1305,10 @@
        ====================================================================== -->
   <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
     <button id="lightbox-close" class="lightbox-close" aria-label="閉じる">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
     </button>
     <img id="lightbox-img" class="lightbox-img" src="" alt="拡大画像">
   </div>
@@ -1207,7 +1317,9 @@
        Toast Notification
        ====================================================================== -->
   <div id="toast" class="toast">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
     <span id="toast-msg">クリップボードにコピーしました</span>
   </div>
 
@@ -1228,4 +1340,5 @@
   <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
+
 </html>
