@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW log for portable operation  ヘルプ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 16px;
+            color: #333333;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #1976D2;
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #1976D2;
+        }
+        h2 {
+            color: #1976D2;
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        .toc {
+            background-color: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 20px;
+        }
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1976D2;
+            font-size: 15px;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 6px;
+        }
+        .toc a {
+            color: #1976D2;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        .img-container {
+            text-align: center;
+            margin: 16px 0;
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+        .feature-list {
+            margin: 12px 0;
+        }
+        .feature-item {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        .feature-num {
+            font-weight: bold;
+            color: #1976D2;
+            width: 28px;
+            flex-shrink: 0;
+        }
+        .feature-content {
+            flex-grow: 1;
+        }
+        .feature-title {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+        .feature-desc {
+            font-size: 13px;
+            color: #666666;
+        }
+        .tag-list {
+            list-style-type: none;
+            padding-left: 8px;
+            margin-top: 8px;
+        }
+        .tag-item {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        .tag-name {
+            color: #D32F2F;
+            font-weight: bold;
+        }
+        ul.bullet-list {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        ul.bullet-list li {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CW log for portable operation  ヘルプ</h1>
+
+    <p>このアプリは、USB接続された外付けのキーヤーを使用して、CW（電信）の交信の移動運用を効率化するためのツールです。アプリを起動すると初期設定画面が表示されますので各項目を入力してください。設定は保存されて次回起動時は最後に設定したものが表示されます。「設定を保存して定型文設定」または「設定を保存してはじめる」をタップするとメイン画面に遷移します。</p>
+
+    <!-- 目次（ナビゲーションリンク） -->
+    <div class="toc">
+        <div class="toc-title">目次</div>
+        <ul>
+            <li><a href="#main_screen">メイン画面の操作</a></li>
+            <li><a href="#usb_keyer">1. USBキーヤーの接続</a></li>
+            <li><a href="#keyboard_input">キーボード入力について</a></li>
+            <li><a href="#record_qso">2. 交信の記録</a></li>
+            <li><a href="#preset_tags">3. 定型文とタグ</a></li>
+            <li><a href="#pro_features">4. Pro版の機能（アプリ内購入）</a></li>
+        </ul>
+    </div>
+
+    <!-- 各セクション -->
+    <h2 id="main_screen">メイン画面の操作</h2>
+    <p>メイン画面の各インターフェース要素の機能は以下の通りです。</p>
+
+    <div class="img-container">
+        <img src="main_screen.png" alt="メイン画面の説明">
+    </div>
+
+    <div class="feature-list">
+        <div class="feature-item">
+            <div class="feature-num">①</div>
+            <div class="feature-content">
+                <div class="feature-title">チェックのみ</div>
+                <div class="feature-desc">チェックを入れると、Checkボタン押下時に送信を行わずに重複チェック（B4判定）のみを行います。チェックなしの場合は相手コールサインに続いて設定した内容を送出します。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">②</div>
+            <div class="feature-content">
+                <div class="feature-title">接続</div>
+                <div class="feature-desc">USBキーヤー（Arduino Keyer等）とのシリアル通信を開始します。正常に接続すると青になります。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">③</div>
+            <div class="feature-content">
+                <div class="feature-title">STOP</div>
+                <div class="feature-desc">現在送信中のメッセージを直ちに中断します。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">④</div>
+            <div class="feature-content">
+                <div class="feature-title">入力エリア</div>
+                <div class="feature-desc">HisCall（相手局）、Date/Time（交信日時）、RSTr（受信レポート）、NRr（受信エクスチェンジ）を入力・表示します。相手コールサインを入力したらCheckボタンをタップします。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">⑤</div>
+            <div class="feature-content">
+                <div class="feature-title">Check</div>
+                <div class="feature-desc">コールサインの重複チェックを行い、日時を自動入力します。「チェックのみ」がオフの場合は、相手局への応答送信も行います。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">⑥</div>
+            <div class="feature-content">
+                <div class="feature-title">定型文ボタン</div>
+                <div class="feature-desc">設定画面であらかじめ登録した定型メッセージをワンタップで送信します。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">⑦</div>
+            <div class="feature-content">
+                <div class="feature-title">メッセージ入力</div>
+                <div class="feature-desc">任意のテキストを入力して送信するためのエリアです。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">⑧</div>
+            <div class="feature-content">
+                <div class="feature-title">送信</div>
+                <div class="feature-desc">メッセージ入力エリアに入力された内容を送信します。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">⑨</div>
+            <div class="feature-content">
+                <div class="feature-title">登録・クリア</div>
+                <div class="feature-desc">「登録」で交信内容をログに保存し、「クリア」で入力内容をリセットします。</div>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="usb_keyer">1. USBキーヤーの接続</h2>
+    <p>OTGアダプターなどを使用して、Arduino KeyerなどのWinkey互換キーヤーをデバイスに接続してください。接続後、画面右上の「接続」ボタンをタップすると通信が開始されます。</p>
+
+    <h2 id="keyboard_input">キーボード入力について</h2>
+    <p>入力時にソフトキーボードが開いた際、アルファベット入力（英語キーボード）に切り替えて、上矢印のキー（Shiftキー）を2回連続でタップすると、大文字入力（Caps Lock）に固定されるため大変便利です。</p>
+
+    <h2 id="record_qso">2. 交信の記録</h2>
+    <p>メイン画面で相手局のコールサインを入力し、「チェック」をタップすると「B4」の判定をし日時を自動で入力し相手のコールサイン、RSTを送出します。「チェックのみ」のチェックボックスがチェックされていると送出はしません。また、「B4」の場合は相手のコールサインとB4を送出します。RSTrやエクスチェンジを入力して「登録」ボタンのタップで交信ログが保存されます。Pro版（アプリ内購入）ではADIFやCSV形式でのエクスポートが可能です。</p>
+
+    <h2 id="preset_tags">3. 定型文とタグ</h2>
+    <p>「定型文設定」画面で、ボタンに割り当てる送信内容を編集できます。以下のタグを使用すると、入力された情報を自動的に埋め込むことができます：</p>
+
+    <ul class="tag-list">
+        <li class="tag-item">• <span class="tag-name">{MyCall}</span> 自局のコールサイン</li>
+        <li class="tag-item">• <span class="tag-name">{HisCall}</span> 相手局のコールサイン</li>
+        <li class="tag-item">• <span class="tag-name">{REPORT}</span> レポート（送付）</li>
+        <li class="tag-item">• <span class="tag-name">{NUMBER}</span> エクスチェンジ（自動インクリメント対応）</li>
+        <li class="tag-item">• <span class="tag-name">{CONTEST_NAME}</span> コンテスト名</li>
+        <li class="tag-item">• <span class="tag-name">{GREETING}</span> あいさつ (GEなど)</li>
+        <li class="tag-item">• <span class="tag-name">{JCC}</span> / <span class="tag-name">{JCG}</span> JCC/JCG番号</li>
+        <li class="tag-item">• <span class="tag-name">{POTA}</span> / <span class="tag-name">{SOTA}</span> POTA/SOTAリファレンス</li>
+    </ul>
+
+    <!-- <h2 id="pro_features">4. Pro版の機能（アプリ内購入）</h2>
+    <ul class="bullet-list">
+        <li>ログのエクスポート（ADIF / ハムログCSV）</li>
+        <li>CSVファイルのインポート</li>
+    </ul> 
+    -->
+
+</body>
+</html>

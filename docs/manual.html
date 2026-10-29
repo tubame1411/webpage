@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CW Log for portable operation | 取扱説明書 (マニュアル)</title>
+  <meta name="description"
+    content="スマートフォン向けアマチュア無線 CW（電信）移動運用ロギング＆キーヤー制御アプリケーション「CW Log for portable operation」の公式オンライン取扱説明書です。画面構成、Winkey接続、定型文マクロ、Turbo HAMLOG連携を詳しく解説。">
+  <link rel="icon" type="image/png" href="images/app_icon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ======================================================================
+       Global Header
+       ====================================================================== -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="header-brand">
+        <img src="images/app_icon.png" alt="CW Log App Icon" class="brand-icon">
+        <span class="brand-title">CW Log</span>
+        <span class="brand-badge">User Manual</span>
+      </a>
+
+      <div class="header-actions">
+        <!-- Search -->
+        <div class="search-wrapper">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="search-input" class="search-input" placeholder="マニュアル内を検索...">
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="icon-btn" aria-label="テーマ切り替え" title="ダーク/ライトモード切り替え">
+          <span id="theme-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle-btn" class="icon-btn menu-toggle-btn" aria-label="目次メニュー" title="目次を開く">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       Hero Banner Section
+       ====================================================================== -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>
+          移動運用のための<br>
+          <span class="gradient-text">CWロギング＆キーヤー制御</span>
+        </h1>
+        <p class="hero-lead">
+          スマートフォン向けアマチュア無線 CW（電信）移動運用ロギング＆キーヤー制御アプリケーション
+          <strong>「CW Log for portable operation」</strong> の公式取扱説明書です。
+        </p>
+
+        <div class="hero-tags">
+          <span class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            USB-OTG キーヤー直結
+          </span>
+          <span class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            即時重複交信(B4)判定
+          </span>
+          <span class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            16個のマクロ定型文
+          </span>
+          <span class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Turbo HAMLOG・ADIF完全対応
+          </span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#section-3-3" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+            メイン画面の解説を見る
+          </a>
+          <a href="#section-2" class="btn btn-secondary">
+            接続準備ガイド
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-phone-card">
+          <img src="images/main_screen.png" alt="CW Log メイン画面プレビュー" class="zoomable-img" title="クリックして拡大">
+          <p class="hero-phone-caption">CW Log メインオペレーション画面</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Main Layout (Sidebar + Content Area)
+       ====================================================================== -->
+  <div class="main-wrapper">
+
+    <!-- Sticky Sidebar (Table of Contents) -->
+    <aside id="sidebar" class="sidebar">
+      <div class="toc-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        目次
+      </div>
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#section-1">1. はじめに・主な特長</a></li>
+        <li class="toc-item"><a href="#section-2">2. 必要な機器と接続準備</a></li>
+        <li class="toc-item">
+          <a href="#section-3">3. アプリの画面構成と基本操作</a>
+          <ul class="toc-sublist">
+            <li><a href="#section-3-1">3.1 初期設定画面</a></li>
+            <li><a href="#section-3-2">3.2 定型文設定画面</a></li>
+            <li><a href="#section-3-3">3.3 メイン画面 (詳細)</a></li>
+            <li><a href="#section-3-4">3.4 交信ログ画面</a></li>
+            <li><a href="#section-3-5">3.5 エクスポート画面</a></li>
+            <li><a href="#section-3-6">3.6 CSVインポート</a></li>
+          </ul>
+        </li>
+        <li class="toc-item"><a href="#section-4">4. 定型文マクロとプロサイン</a></li>
+        <li class="toc-item"><a href="#section-5">5. 実践！移動運用ワークフロー</a></li>
+        <li class="toc-item"><a href="#section-6">6. 便利な操作テクニック</a></li>
+        <li class="toc-item"><a href="#section-7">7. トラブルシューティング</a></li>
+        <li class="toc-item"><a href="#section-8">8. 利用規約および免責事項</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+
+      <!-- ================================================================
+           Section 1: はじめに・主な特長
+           ================================================================ -->
+      <section id="section-1" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 1</span>
+          <h2 class="section-title">はじめに・主な特長</h2>
+          <p class="section-lead">
+            スマートフォン単体＋外付けキーヤーで軽快・確実にこなす電信移動運用の決定版
+          </p>
+        </div>
+
+        <p>
+          「<strong>CW Log for portable operation</strong>」は、POTA（Parks on the Air）、SOTA（Summits on the
+          Air）、各種コンテスト、移動サービス等の電信（CW）運用を、スマートフォン単体＋外付けキーヤーで軽快・確実にこなすために開発されたロギング＆キーヤー制御アプリです。
+        </p>
+
+        <div class="card-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <line x1="9" y1="1" x2="9" y2="4"></line>
+                <line x1="15" y1="1" x2="15" y2="4"></line>
+                <line x1="9" y1="20" x2="9" y2="23"></line>
+                <line x1="15" y1="20" x2="15" y2="23"></line>
+                <line x1="20" y1="9" x2="23" y2="9"></line>
+                <line x1="20" y1="14" x2="23" y2="14"></line>
+                <line x1="1" y1="9" x2="4" y2="9"></line>
+                <line x1="1" y1="14" x2="4" y2="14"></line>
+              </svg>
+            </div>
+            <h3>USBダイレクトキーヤー制御</h3>
+            <p>Arduino KeyerなどのK1EL Winkey互換キーヤーをUSB-OTGで直結し、PCレスで安定したCW送出を実現します。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3>重複交信チェック (B4判定)</h3>
+            <p>コールサインを入力してCheckを押すだけで、過去ログから同一バンド・モード・日付の重複を瞬時に判定・通知します。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>CQ自動リピート送出</h3>
+            <p>ボタン1（CQ）はインターバル設定（2〜10秒）と回数指定による自動リピート送出に対応。相手局の応答に素早く集中できます。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+            </div>
+            <h3>動的タグ置換マクロ</h3>
+            <p>自局/相手局コールサイン、RST、コンテスト番号、QTH、リファレンス（POTA/SOTA）等を自動展開して送信します。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>Turbo HAMLOG・ADIF互換</h3>
+            <p>Shift-JIS形式のHAMLOG互換CSVエクスポート・インポート、および世界標準のADIF（.adi）エクスポートに対応。</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </div>
+            <h3>連番自動インクリメント</h3>
+            <p>コンテスト等で便利なエクスチェンジ番号（001、002...）の自動カウントアップ機能を標準装備。</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           Section 2: 必要な機器と接続準備
+           ================================================================ -->
+      <section id="section-2" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 2</span>
+          <h2 class="section-title">必要な機器と接続準備</h2>
+          <p class="section-lead">スマートフォンのUSB-OTG機能を利用してCWキーヤーと接続します</p>
+        </div>
+
+        <div class="hardware-flow">
+          <h3 style="font-size:1.1rem; margin-bottom:12px; font-weight:700;">ハードウェア接続構成図</h3>
+          <div class="diagram-row">
+            <div class="diagram-node">
+              <div class="diagram-node-icon">📱</div>
+              <div class="diagram-node-title">Android端末</div>
+              <div class="diagram-node-desc">Android 8.0以降 (OTG対応)</div>
+            </div>
+            <div class="diagram-arrow">
+              <span>USB-C / microB</span>
+              <span>➔</span>
+            </div>
+            <div class="diagram-node">
+              <div class="diagram-node-icon">🔌</div>
+              <div class="diagram-node-title">OTGアダプター</div>
+              <div class="diagram-node-desc">※データ通信・給電両対応</div>
+            </div>
+            <div class="diagram-arrow">
+              <span>USB Type-A</span>
+              <span>➔</span>
+            </div>
+            <div class="diagram-node">
+              <div class="diagram-node-icon">🎛️</div>
+              <div class="diagram-node-title">Winkey互換キーヤー</div>
+              <div class="diagram-node-desc">Arduino / FTDI / CH34x等</div>
+            </div>
+            <div class="diagram-arrow">
+              <span>KEY / PTT線</span>
+              <span>➔</span>
+            </div>
+            <div class="diagram-node">
+              <div class="diagram-node-icon">📻</div>
+              <div class="diagram-node-title">無線機 (リグ)</div>
+              <div class="diagram-node-desc">IC-705, FT-818, KX2等</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-warning">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <div>
+            <strong>注意（ケーブルの選定）:</strong>
+            100円ショップ等で販売されているケーブルの中には「充電専用」が存在します。充電専用ケーブルではキーヤーと通信できません。必ず<strong>「充電・データ通信両対応」</strong>のUSBケーブルまたはOTGアダプターをご使用ください。
+          </div>
+        </div>
+
+        <h3 class="subsection-title">接続手順</h3>
+        <ol class="step-list">
+          <li class="step-item">
+            <div class="step-text">
+              <h4>Android端末にUSB-OTGアダプターを装着</h4>
+              <p>スマートフォンの端子にOTGアダプターを差し込み、USBケーブルで外付けのWinkey互換キーヤーを接続します。スマートフォン、キーヤーそれぞれに適した接続方法で接続してください</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-text">
+              <h4>「CW Log」アプリを起動</h4>
+              <p>アプリを起動します。初期設定画面またはメイン画面が開きます。</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-text">
+              <h4>画面上部の「接続」ボタンをタップ</h4>
+              <p>画面右上にあるグレー色の <span
+                  style="background:#6b7280; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続</span>
+                ボタンをタップします。</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-text">
+              <h4>USBデバイスへのアクセスを許可</h4>
+              <p>初回接続時、Androidのシステムから「USBデバイスへのアクセスを許可しますか？」という確認ダイアログが表示されます。<strong>「OK」</strong>をタップします。</p>
+            </div>
+          </li>
+          <li class="step-item">
+            <div class="step-text">
+              <h4>接続完了（青色「接続中」に変化）</h4>
+              <p>キーヤーとシリアル通信ハンドシェイクが成立すると、ボタンが青色の <span
+                  style="background:#1976d2; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続中</span>
+                に変化します。これでキーヤー制御の準備が整いました。</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+
+      <!-- ================================================================
+           Section 3: アプリの画面構成と基本操作フロー
+           ================================================================ -->
+      <section id="section-3" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 3</span>
+          <h2 class="section-title">アプリの画面構成と基本操作フロー</h2>
+          <p class="section-lead">左上のハンバーガーメニューから各画面を自由に切り替えることができます</p>
+        </div>
+
+        <div class="drawer-menu-guide"
+          style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; margin: 20px 0; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px 24px;">
+          <div style="flex: 0 0 160px; max-width: 160px; margin: 0 auto;">
+            <div class="phone-mockup" style="border-width: 6px; border-radius: 22px;">
+              <div class="phone-notch" style="height: 8px; width: 44px; top: 4px;"></div>
+              <img src="images/menu_screen.png" alt="ドロワーメニュー" class="phone-screen-img zoomable-img" title="クリックして拡大">
+            </div>
+            <div class="phone-hint" style="justify-content: center; margin-top: 6px;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              拡大表示
+            </div>
+          </div>
+          <div style="flex: 1; min-width: 240px;">
+            <h4 style="margin-bottom: 8px; font-size: 1.05rem;">画面左上のメニューから各画面へワンタップ移動</h4>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
+              画面左上のハンバーガーアイコン（<strong>三本線</strong>）をタップするとドロワーメニューが表示されます。
+              メイン画面、定型文設定、初期設定、交信ログ、エクスポート機能（アプリ内購入）、CSVインポート、ヘルプなど、全画面へいつでも自由に移動できます。
+            </p>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.3 メイン画面 (詳細インタラクティブ)
+             ============================================================ -->
+        <div id="section-3-3" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.3</span> メイン画面 (Main Screen)
+          </h3>
+          <p>
+            運用中に常時操作するメインのオペレーション画面です。
+            以下の画面画像上の各番号（①〜⑨）に対応する機能詳細をご確認ください（画像をクリックすると拡大表示できます）。
+          </p>
+
+          <!-- Interactive Showcase -->
+          <div class="interactive-showcase">
+
+            <!-- Left: Mockup Phone Frame with main_screen.png -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/main_screen.png" alt="CW Log メイン画面 (番号付き)" class="phone-screen-img zoomable-img"
+                  id="main-screen-preview" title="クリックして大画面で拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                画像クリックで高解像度拡大表示
+              </div>
+            </div>
+
+            <!-- Right: Breakdown Feature Cards -->
+            <div class="feature-breakdown-list">
+
+              <!-- 1 -->
+              <div class="breakdown-card" id="feat-1">
+                <div class="breakdown-header">
+                  <span class="num-badge">1</span>
+                  <span class="breakdown-title">チェックのみ (Check Only)</span>
+                  <span class="breakdown-tag">Checkbox</span>
+                </div>
+                <div class="breakdown-body">
+                  チェックを入れると、Checkボタン押下時にCW送信を行わず、過去ログの重複判定（B4）と日時取得のみを行います。ワッチ中やすでに交信済みか調べたいだけの時に電波を出さずに確認できます。
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="breakdown-card" id="feat-2">
+                <div class="breakdown-header">
+                  <span class="num-badge">2</span>
+                  <span class="breakdown-title">接続ボタン (USB Keyer Link)</span>
+                  <span class="breakdown-tag">Status</span>
+                </div>
+                <div class="breakdown-body">
+                  USBキーヤーとのシリアル通信を開始・切断します。未接続時はグレー（接続）、正常にハンドシェイクが完了すると青色（接続中）に点灯します。現在の周波数・モード（例: 7 CW）も併せて表示されます。
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="breakdown-card" id="feat-3">
+                <div class="breakdown-header">
+                  <span class="num-badge">3</span>
+                  <span class="breakdown-title">STOP ボタン (送出中断)</span>
+                  <span class="breakdown-tag">Action</span>
+                </div>
+                <div class="breakdown-body">
+                  赤色のボタンです。タップすると即座にキーヤーへ中断コマンド（0x0A）を送信し、送出中のCWおよびCQの自動インターバルリピートを即時強制停止します。
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="breakdown-card" id="feat-4">
+                <div class="breakdown-header">
+                  <span class="num-badge">4</span>
+                  <span class="breakdown-title">HisCall / Date / Time 入力エリア</span>
+                  <span class="breakdown-tag">Input</span>
+                </div>
+                <div class="breakdown-body">
+                  <ul>
+                    <li><strong>HisCall</strong>: 相手局のコールサイン入力欄。</li>
+                    <li><strong>Date / Time</strong>: 交信日付・時刻。Checkボタンを押すと日本時間（JST）で自動入力されます（手動修正も可能）。</li>
+                    <li><strong>RSTs</strong>: 相手へ送るRST（初期値: 599）。タップすると自動クリアされ、素早く数字を入力できます。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 5 -->
+              <div class="breakdown-card" id="feat-5">
+                <div class="breakdown-header">
+                  <span class="num-badge">5</span>
+                  <span class="breakdown-title">Check ボタン (重複判定・自動送出)</span>
+                  <span class="breakdown-tag">Core Feature</span>
+                </div>
+                <div class="breakdown-body">
+                  相手コールサイン入力後にCheckボタンを押すと、以下の動作が自動実行されます：
+                  <ul>
+                    <li><strong>重複チェック (B4)</strong>: 同一バンド・モード・日付の重複を瞬時に判定。交信済みの場合は <code>相手局 B4</code> を自動送出。</li>
+                    <li><strong>未交信時</strong>: 「チェックのみ」がOFFの場合、相手コール＋レポート/エクスチェンジを自動送出。</li>
+                    <li><strong>不確かなコール (?機能)</strong>: 末尾に <code>?</code> が付いている場合（例:
+                      <code>JA1?</code>）はコールサイン＋？のみ送出して確認。
+                    </li>
+                    <li><strong>自動フォーカス移動</strong>: 自動的に受領レポート欄（RSTr）にカーソルが移動します。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- 6 -->
+              <div class="breakdown-card" id="feat-6">
+                <div class="breakdown-header">
+                  <span class="num-badge">6</span>
+                  <span class="breakdown-title">定型文マクロボタン (4×4 計16個)</span>
+                  <span class="breakdown-tag">Macros</span>
+                </div>
+                <div class="breakdown-body">
+                  4行×4列の16個のマクロボタン。ワンタップで定義したメッセージを即時送信します。
+                  ボタン1（CQ）は自動リピート送出に対応。その他、DE, GREET, UR, TU, AGN, ?, BT, AR, KN, VAなどの標準CWプロサインに対応しています。
+                </div>
+              </div>
+
+              <!-- 7 -->
+              <div class="breakdown-card" id="feat-7">
+                <div class="breakdown-header">
+                  <span class="num-badge">7</span>
+                  <span class="breakdown-title">フリーメッセージ入力欄</span>
+                  <span class="breakdown-tag">Input</span>
+                </div>
+                <div class="breakdown-body">
+                  定型文以外の任意のテキスト（相手のオペレーター名、リグ情報、天気など）を自由に入力して送信するためのテキストボックスです。
+                </div>
+              </div>
+
+              <!-- 8 -->
+              <div class="breakdown-card" id="feat-8">
+                <div class="breakdown-header">
+                  <span class="num-badge">8</span>
+                  <span class="breakdown-title">送信ボタン</span>
+                  <span class="breakdown-tag">Send</span>
+                </div>
+                <div class="breakdown-body">
+                  フリーメッセージ欄に入力したテキストをキーヤーへ送出します（ソフトキーボードのEnterキーでも送信可能）。
+                </div>
+              </div>
+
+              <!-- 9 -->
+              <div class="breakdown-card" id="feat-9">
+                <div class="breakdown-header">
+                  <span class="num-badge">9</span>
+                  <span class="breakdown-title">登録 & クリアボタン</span>
+                  <span class="breakdown-tag">Log Action</span>
+                </div>
+                <div class="breakdown-body">
+                  <ul>
+                    <li><strong>登録 (緑)</strong>:
+                      入力した交信データを内部データベースに保存。保存後、入力欄がリセットされ、カーソルは次の交信に備えて「HisCall」欄に自動復帰します（自動インクリメント有効時はエクスチェンジ番号が自動で+1されます）。
+                    </li>
+                    <li><strong>クリア (灰)</strong>: 保存せずに入力欄をリフレッシュします。</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.1 初期設定画面
+             ============================================================ -->
+        <div id="section-3-1" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.1</span> 初期設定画面 (Initial Settings)
+          </h3>
+          <p>
+            アプリ起動時に最初に開く画面です（運用途中でもメニューからいつでも変更可能）。移動地の情報や運用の基本パラメーターを設定します。
+          </p>
+
+          <div class="screen-layout-split">
+            <!-- App Screen Real Screenshot -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/settings_screen.png" alt="CW Log 初期設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
+              </div>
+            </div>
+
+            <!-- Settings Details Table -->
+            <div class="table-wrapper" style="margin:0;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>設定項目</th>
+                    <th>内容説明</th>
+                    <th>入力例・値</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>自局コールサイン (MyCall)</strong></td>
+                    <td>あなたのコールサインを入力します。定型文の <code class="copy-tag" data-copy="{MyCall}">{MyCall}</code> に置換されます。</td>
+                    <td><code>JA1ABC/1</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>レポート (相手への送付)</strong></td>
+                    <td>デフォルトで送出・記録する自局からのレポート（RSTs）。</td>
+                    <td><code>599</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>エクスチェンジ (Exchange)</strong></td>
+                    <td>コンテストやアワード等で送るナンバー。</td>
+                    <td><code>001</code>, <code>100101</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>エクスチェンジを自動インクリメント</strong></td>
+                    <td>チェックを入れると、QSO登録ごとにナンバーの数値部分が自動で+1カウントアップします。</td>
+                    <td>ON / OFF</td>
+                  </tr>
+                  <tr>
+                    <td><strong>コンテスト名</strong></td>
+                    <td>参加中のコンテスト名や運用名称。<code class="copy-tag" data-copy="{CONTEST_NAME}">{CONTEST_NAME}</code> に置換されます。
+                    </td>
+                    <td><code>ALL JA</code>, <code>TEST</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>あいさつ (Greeting)</strong></td>
+                    <td>時間帯に応じた挨拶文。<code class="copy-tag" data-copy="{GREETING}">{GREETING}</code> に置換されます。</td>
+                    <td><code>GE</code>, <code>GM</code>, <code>GA</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>周波数 (Freq)</strong></td>
+                    <td>運用バンド（1.9〜1200MHz等から選択、または直接入力）。</td>
+                    <td><code>7</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>モード (Mode)</strong></td>
+                    <td>運用モード（CW, SSB, AM, FM, RTTY, FT8から選択）。</td>
+                    <td><code>CW</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>WPM (送信速度)</strong></td>
+                    <td>CWの送出速度（5〜40 WPM）。キーヤーに即時反映されます。</td>
+                    <td><code>20</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>JCC / 市番号</strong></td>
+                    <td>運用地の市番号（5桁）。<code class="copy-tag" data-copy="{JCC}">{JCC}</code> に置換されます。</td>
+                    <td><code>1001</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>JCG / 郡番号</strong></td>
+                    <td>運用地の郡番号（5桁）。<code class="copy-tag" data-copy="{JCG}">{JCG}</code> に置換されます。</td>
+                    <td><code>10001</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>POTA Reference</strong></td>
+                    <td>Parks on the Air 公園番号。<code class="copy-tag" data-copy="{POTA}">{POTA}</code> に置換されます。</td>
+                    <td><code>JA-0001</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>SOTA Reference</strong></td>
+                    <td>Summits on the Air 山岳番号。<code class="copy-tag" data-copy="{SOTA}">{SOTA}</code> に置換されます。</td>
+                    <td><code>JA/TK-001</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>備考 1 / 備考 2</strong></td>
+                    <td>QSLカード方針、移動地補足、IC-705等の設備情報。</td>
+                    <td><code>POTA PK-001</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.2 定型文設定画面
+             ============================================================ -->
+        <div id="section-3-2" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.2</span> 定型文設定画面 (Preset Settings)
+          </h3>
+          <p>
+            4行×4列＝計16個のマクロボタンの名前と送信内容を自由にカスタマイズできます。
+          </p>
+
+          <div class="screen-layout-split">
+            <!-- App Screen Real Screenshot for Presets -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/preset_screen.png" alt="CW Log ボタン定型文の設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
+              </div>
+            </div>
+
+            <!-- Preset Settings Explanation -->
+            <div class="card-grid" style="margin:0;">
+              <div class="feature-card">
+                <h3>1. ボタン名 & 送信内容</h3>
+                <p>各ボタンのラベル（最大8文字程度）と、タップ時に送出するCW文字列を設定します。<code>{MyCall}</code> や <code>{REPORT}</code>
+                  などの動的タグを自在に埋め込めます。</p>
+              </div>
+              <div class="feature-card">
+                <h3>2. Checkボタン送信内容</h3>
+                <p>メイン画面で「Check」ボタンを押した際に自動送出するメッセージを定義します（デフォルト：<code>{HisCall} {REPORT} {NUMBER}</code>）。</p>
+              </div>
+              <div class="feature-card">
+                <h3>3. ボタン1のCQ自動リピート設定</h3>
+                <p>
+                  <strong>繰り返しON/OFF</strong>、<strong>送信間隔</strong>（2秒〜10秒）、<strong>リピート回数</strong>（2回〜無制限）を指定可能。途中でSTOPボタンを押せば即停止します。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.4 交信ログ画面
+             ============================================================ -->
+        <div id="section-3-4" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.4</span> 交信ログ画面 (QSO Log)
+          </h3>
+          <p>端末内に保存されている全交信ログを一覧確認・編集できる画面です。</p>
+
+          <div class="screen-layout-split">
+            <!-- App Screen Real Screenshot for QSO Log -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/log_screen.png" alt="CW Log ログ一覧画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
+              </div>
+            </div>
+
+            <!-- Features Cards -->
+            <div class="card-grid" style="margin:0;">
+              <div class="feature-card">
+                <h3>総件数表示 & 横スクロール可</h3>
+                <p>保存件数を一目で確認可能。相手局、日付、時刻、周波数、モード、RSTs、RSTr、備考1、備考2を横スクロールで一覧表示。</p>
+              </div>
+              <div class="feature-card">
+                <h3>ログの訂正（編集ダイアログ）</h3>
+                <p>行の左端にある<strong>鉛筆アイコン</strong>をタップすると、編集ダイアログが開き、コールサインやレポート、備考等を直接修正できます。</p>
+              </div>
+              <div class="feature-card">
+                <h3>個別削除 & 一括削除</h3>
+                <p><strong>ゴミ箱アイコン</strong>で1件削除、画面右上の「一括削除」から全ログデータを消去できます（誤消去防止の警告ダイアログ付き）。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.5 & 3.6 エクスポート & インポート
+             ============================================================ -->
+        <div id="section-3-5" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.5</span> エクスポート画面 & <span
+              style="color:var(--brand-blue);">3.6</span> CSVインポート
+          </h3>
+
+          <div class="screen-layout-split">
+            <!-- App Screen Real Screenshot for Export -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/export_screen.png" alt="CW Log エクスポート設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
+              </div>
+            </div>
+
+            <!-- Export and Import Feature Description Cards -->
+            <div class="screen-showcase-grid" style="margin:0;">
+              <div class="screen-card">
+                <div class="screen-card-header">
+                  <h4>📁 エクスポート機能 (Export)</h4>
+                </div>
+                <div class="screen-card-body">
+                  <ul style="padding-left:18px; line-height:1.7;">
+                    <li><strong>Turbo HAMLOG互換CSV</strong>: Shift-JIS形式で出力され、PCのHAMLOGにそのまま取り込み可能。</li>
+                    <li><strong>世界標準ADIF形式 (.adi)</strong>: LoTW、eQSL、各種アワード申請、他のログソフトで使用できるUTF-8標準形式。</li>
+                    <li><strong>安全なフィルター機能</strong>: 「インポート済みデータを除外」「エクスポート済みデータを除外」をチェックすることで二重出力を完全防止。</li>
+                    <li><strong>日付指定出力</strong>: 運用日ごとにチェックを入れて必要なログのみをファイル出力。</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="screen-card">
+                <div class="screen-card-header">
+                  <h4>📥 CSVインポート機能 (Import CSV)</h4>
+                </div>
+                <div class="screen-card-body">
+                  <ul style="padding-left:18px; line-height:1.7;">
+                    <li>Turbo HAMLOGから出力したCSVファイル（Shift-JIS）を選択して端末内に取り込み可能。</li>
+                    <li><strong>自動重複スキップ</strong>: 同一局・同一日・同一バンド・同一モードの交信は自動で検出され、重複登録を防止します。</li>
+                    <li>過去のログを取り込んでおくことで、移動運用中のB4チェック（交信済み判定）が極めて強力になります。</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- ================================================================
+           Section 4: 定型文マクロとプロサイン
+           ================================================================ -->
+      <section id="section-4" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 4</span>
+          <h2 class="section-title">定型文マクロとプロサイン (Tags & Prosigns)</h2>
+          <p class="section-lead">タグをクリックするとクリップボードにコピーできます</p>
+        </div>
+
+        <h3 class="subsection-title">利用可能なマクロタグ一覧</h3>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>置換タグ（クリックでコピー）</th>
+                <th>置換される内容</th>
+                <th>補足</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><button class="copy-tag" data-copy="{MyCall}">{MyCall}</button></td>
+                <td>初期設定で登録した自局コールサイン</td>
+                <td><code>{自局コールサイン}</code> でも可</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{HisCall}">{HisCall}</button></td>
+                <td>メイン画面で入力中の相手局コールサイン</td>
+                <td>入力欄と連動</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{REPORT}">{REPORT}</button></td>
+                <td>送付レポート（RSTsに入力中の値、または初期設定）</td>
+                <td><code>{レポート}</code>, <code>{RSTs}</code> でも可</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{NUMBER}">{NUMBER}</button></td>
+                <td>コンテストナンバー / エクスチェンジ</td>
+                <td>自動インクリメント対応</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{CONTEST_NAME}">{CONTEST_NAME}</button></td>
+                <td>コンテスト名</td>
+                <td>例: <code>ALL JA</code>, <code>TEST</code></td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{GREETING}">{GREETING}</button></td>
+                <td>時間帯のあいさつ</td>
+                <td>例: <code>GE</code>, <code>GM</code>, <code>GA</code></td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{JCC}">{JCC}</button></td>
+                <td>JCC市番号</td>
+                <td>入力がある場合 <code>JCC 1001</code> に自動整形</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{JCG}">{JCG}</button></td>
+                <td>JCG郡番号</td>
+                <td>入力がある場合 <code>JCG 10001</code> に自動整形</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{POTA}">{POTA}</button></td>
+                <td>POTAリファレンス</td>
+                <td>入力がある場合 <code>POTA JA-0001</code> に自動整形</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{SOTA}">{SOTA}</button></td>
+                <td>SOTAリファレンス</td>
+                <td>入力がある場合 <code>SOTA JA/TK-001</code> に自動整形</td>
+              </tr>
+              <tr>
+                <td><button class="copy-tag" data-copy="{Remarks1}">{Remarks1}</button></td>
+                <td>備考1に入力した文字列</td>
+                <td><code>{備考1}</code> でも可</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- <h3 class="subsection-title" style="margin-top:36px;">CWプロサイン（合成符号）記号対応表</h3>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>プロサイン</th>
+                <th>送信文字列記号</th>
+                <th>モールス符号表現</th>
+                <th>用途・意味</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>BT</strong></td>
+                <td><span class="prosign-code">=</span></td>
+                <td><code>-...-</code></td>
+                <td>区切り符号（文章と文章の間）</td>
+              </tr>
+              <tr>
+                <td><strong>AR</strong></td>
+                <td><span class="prosign-code">+</span></td>
+                <td><code>.-.-.</code></td>
+                <td>送信終了符号（交信の区切り）</td>
+              </tr>
+              <tr>
+                <td><strong>KN</strong></td>
+                <td><span class="prosign-code">(</span></td>
+                <td><code>-.--.</code></td>
+                <td>特定局応答指定（指名した相手局のみ送信してください）</td>
+              </tr>
+              <tr>
+                <td><strong>VA / SK</strong></td>
+                <td><span class="prosign-code">&gt;</span></td>
+                <td><code>...-.-</code></td>
+                <td>交信完全終了（ファイナル）</td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+      </section>
+
+
+      <!-- ================================================================
+           Section 5: 実践！移動運用QSOワークフロー
+           ================================================================ -->
+      <section id="section-5" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 5</span>
+          <h2 class="section-title">実践！移動運用QSOワークフロー</h2>
+          <p class="section-lead">POTA・SOTAやコンテストでの典型的なオペレーション手順</p>
+        </div>
+
+        <div class="workflow-container">
+          <h3 style="font-size:1.1rem; font-weight:700;">標準QSOステップ</h3>
+          <div class="workflow-steps">
+
+            <div class="workflow-step-card">
+              <div class="workflow-step-badge">1</div>
+              <div class="workflow-step-content">
+                <h4>事前準備 & キーヤー接続</h4>
+                <p>初期設定で自局コール、運用バンド、WPM、POTA/JCC番号を設定。画面右上の「接続」をタップして青色「接続中」を確認します。</p>
+              </div>
+            </div>
+
+            <div class="workflow-step-card">
+              <div class="workflow-step-badge">2</div>
+              <div class="workflow-step-content">
+                <h4>CQ送出（自動リピート）</h4>
+                <p>ボタン1（<strong>CQ</strong>）をタップ。設定した間隔（例: 3秒）で自動的にCQを繰り返し送信します。</p>
+              </div>
+            </div>
+
+            <div class="workflow-step-card">
+              <div class="workflow-step-badge">3</div>
+              <div class="workflow-step-content">
+                <h4>応答受信 & コールサイン入力</h4>
+                <p><strong>HisCall</strong> 欄にコールサインを入力します。</p>
+              </div>
+            </div>
+
+            <div class="workflow-step-card">
+              <div class="workflow-step-badge">4</div>
+              <div class="workflow-step-content">
+                <h4>Check & レポート送出</h4>
+                <p><strong>Check</strong> ボタンをタップ。日時が自動記録され、未交信であれば相手コール＋レポート（例:
+                  <code>JA1XYZ 599 BK</code>）が自動送出されます。カーソルは受領レポート欄（RSTr）に自動ジャンプします。
+                </p>
+              </div>
+            </div>
+
+            <div class="workflow-step-card">
+              <div class="workflow-step-badge">5</div>
+              <div class="workflow-step-content">
+                <h4>相手レポート受領 & TU送信</h4>
+                <p>相手局からのレポートやナンバーを入力。ボタン5（<strong>TU</strong>）をタップしてお礼を送出します。</p>
+              </div>
+            </div>
+
+            <div class="workflow-step-card">
+              <div class="workflow-step-badge">6</div>
+              <div class="workflow-step-content">
+                <h4>ログ登録 & 次の交信へ</h4>
+                <p><strong>登録</strong> ボタンをタップ。ログが保存され、入力欄がクリアされ、カーソルは次の交信に備えて自動的に HisCall に復帰します。</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           Section 6: 便利な操作テクニック (Tips)
+           ================================================================ -->
+      <section id="section-6" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 6</span>
+          <h2 class="section-title">便利な操作テクニック (Tips)</h2>
+          <p class="section-lead">フィールド運用での入力スピードと快適性を劇的に高めるプロのノウハウ</p>
+        </div>
+
+        <div class="tips-grid">
+          <div class="tip-card">
+            <h4 class="tip-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83">
+                </path>
+              </svg>
+              キーボードの大文字固定 (Caps Lock)
+            </h4>
+            <p class="tip-desc">
+              コールサイン入力時、Androidの英字キーボードで上矢印キー（Shiftキー）を素早く<strong>2回連続タップ</strong>すると、Caps
+              Lock（大文字固定）になります。小文字混じりの誤入力を防ぎ、入力効率が格段に向上します。
+            </p>
+          </div>
+
+          <div class="tip-card">
+            <h4 class="tip-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="1 4 1 10 7 10"></polyline>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+              </svg>
+              RST欄の自動クリア機能
+            </h4>
+            <p class="tip-desc">
+              RSTsやRSTrの入力欄は、タップした瞬間にテキストが自動クリアされる設計になっています。「バックスペースで消してから打ち直す」手間が不要で、テンキーで数字を押すだけで瞬時に入力できます。
+            </p>
+          </div>
+
+          <div class="tip-card">
+            <h4 class="tip-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              コールサインが不確かな時の「?」機能
+            </h4>
+            <p class="tip-desc">
+              サフィックスしか聞き取れなかった場合、<code>JA1?</code> のように末尾に <code>?</code> を付けてCheckを押すと、レポートを送らずにコールサイン確認のみを送出します。
+            </p>
+          </div>
+
+          <div class="tip-card">
+            <h4 class="tip-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <polyline points="9 11 12 14 22 4"></polyline>
+              </svg>
+              「チェックのみ」の賢い活用法
+            </h4>
+            <p class="tip-desc">
+              ワッチ中やすでに交信済みか調べたいだけの時は、画面左上の「チェックのみ」にチェックを入れてCheckを押します。電波を出さずに過去ログのB4判定のみを実行できます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           Section 7: トラブルシューティング
+           ================================================================ -->
+      <section id="section-7" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 7</span>
+          <h2 class="section-title">トラブルシューティング (Q&A)</h2>
+          <p class="section-lead">困ったときはまずここをご確認ください</p>
+        </div>
+
+        <div class="faq-accordion">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q1. 「接続」ボタンを押しても「No USB devices found」と出る / 接続できない</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>原因1:</strong> ケーブルが「充電専用」になっている可能性があります。必ず「データ通信対応」のUSBケーブルおよびOTGアダプターをご使用ください。</li>
+                <li><strong>原因2:</strong>
+                  Android端末の「OTG接続」がシステム設定で無効化されている場合があります（一部のOPPOやvivoなどの端末では、「設定」→「その他の設定」または「システム」→「OTG接続」を手動でONにする必要があります）。
+                </li>
+                <li><strong>原因3:</strong> USBキーヤーのシリアル変換チップが給電不足の可能性があります。セルフパワーハブ等を介して給電をお試しください。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q2. CW送信が途中で止まらない / 送信が暴走した</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              画面右上の <strong>「STOP」ボタン（赤色）</strong> をタップしてください。即座にキーヤーへ中断コマンド（0x0A）が発行され、CW送信およびCQリピートが強制停止されます。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q3. 「準備ができていません (同期が必要です)」と表示されて送信できない</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              USBキーヤーとのシリアル通信ハンドシェイクが完了していません。画面右上のボタンが青色「接続中」になっているかご確認ください。一度ケーブルを抜き差しして再度「接続」ボタンをタップしてください。
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ================================================================
+           Section 8: 利用規約および免責事項
+           ================================================================ -->
+      <section id="section-8" class="manual-section">
+        <div class="section-header">
+          <span class="section-number">Chapter 8</span>
+          <h2 class="section-title">利用規約および免責事項</h2>
+          <p class="section-lead">アプリのご利用にあたって</p>
+        </div>
+
+        <div class="terms-box">
+          <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.7;">
+            「CW Log for portable operation」（アプリ名：CW Log）の利用規約および免責事項の全文は、以下の専用ページにて定めております。アプリのご利用前に必ずご確認ください。
+          </p>
+
+          <div style="margin: 24px 0;">
+            <a href="../ido_kiyaku.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer"
+              style="padding: 12px 24px; font-size: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              利用規約および免責事項（全文）を開く
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="margin-left: 4px;">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+
+          <div class="callout callout-info" style="margin-top: 24px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <div>
+              <strong>重要事項のご案内:</strong>
+              <ul style="margin: 6px 0 0 18px; padding: 0; line-height: 1.7;">
+                <li>交信ログ等のデータは端末内にのみ保存されます。端末の故障や機種変更等に備え、定期的な外部バックアップ（CSV / ADIFエクスポート）をお勧めいたします。</li>
+                <li>データ消失による損害等について開発者は一切の責任を負いかねますので、自己責任において管理をお願いいたします。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ======================================================================
+       Image Lightbox Modal
+       ====================================================================== -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true">
+    <button id="lightbox-close" class="lightbox-close" aria-label="閉じる">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="拡大画像">
+  </div>
+
+  <!-- ======================================================================
+       Toast Notification
+       ====================================================================== -->
+  <div id="toast" class="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toast-msg">クリップボードにコピーしました</span>
+  </div>
+
+  <!-- ======================================================================
+       Global Footer
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="#section-1">はじめに</a>
+      <a href="#section-3-3">メイン画面</a>
+      <a href="#section-4">マクロタグ</a>
+      <a href="#section-7">Q&A</a>
+      <a href="../ido_kiyaku.html" target="_blank" rel="noopener noreferrer">利用規約</a>
+    </div>
+    <p>&copy; CW Log for portable operation. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
