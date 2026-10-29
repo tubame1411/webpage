@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I DO ヘルプ</title>
+    <title>I DO 取扱説明書・ヘルプ</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -24,8 +24,18 @@
         h2 {
             color: #1976D2;
             font-size: 18px;
-            margin-top: 24px;
+            margin-top: 28px;
             margin-bottom: 12px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        h3 {
+            color: #1565C0;
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            padding-left: 8px;
+            border-left: 3px solid #1976D2;
         }
         p {
             margin-top: 0;
@@ -110,10 +120,95 @@
         ul.bullet-list {
             padding-left: 20px;
             margin-top: 8px;
+            margin-bottom: 12px;
         }
         ul.bullet-list li {
-            margin-bottom: 4px;
+            margin-bottom: 6px;
             font-size: 14px;
+        }
+        ol.step-list {
+            padding-left: 20px;
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+        ol.step-list li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .info-box {
+            background-color: #E3F2FD;
+            border: 1px solid #BBDEFB;
+            border-left: 4px solid #1976D2;
+            border-radius: 4px;
+            padding: 10px 14px;
+            margin: 14px 0;
+            font-size: 13px;
+            color: #0D47A1;
+        }
+        .info-box strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .warning-box {
+            background-color: #FFF3E0;
+            border: 1px solid #FFE0B2;
+            border-left: 4px solid #F57C00;
+            border-radius: 4px;
+            padding: 10px 14px;
+            margin: 14px 0;
+            font-size: 13px;
+            color: #E65100;
+        }
+        .warning-box strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .dl-card {
+            background-color: #F8F9FA;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin: 16px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .dl-card-header {
+            font-weight: bold;
+            font-size: 14px;
+            color: #111827;
+        }
+        .dl-button {
+            display: inline-block;
+            background-color: #1976D2;
+            color: #ffffff !important;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none !important;
+            text-align: center;
+            width: fit-content;
+            transition: background-color 0.2s;
+        }
+        .dl-button:hover {
+            background-color: #1565C0;
+        }
+        .dl-link-text {
+            font-size: 12px;
+            color: #6B7280;
+            word-break: break-all;
+        }
+        .badge-standard {
+            display: inline-block;
+            background-color: #1976D2;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
         }
     </style>
 </head>
@@ -121,18 +216,24 @@
 
     <h1>I DO ヘルプ</h1>
 
-    <p>このアプリは、USB接続された外付けのキーヤーを使用して、CW（電信）の交信の移動運用を効率化するためのツールです。アプリを起動すると初期設定画面が表示されますので各項目を入力してください。設定は保存されて次回起動時は最後に設定したものが表示されます。「設定を保存して定型文設定」または「設定を保存してはじめる」をタップするとメイン画面に遷移します。</p>
+    <p>このアプリは、外付けの USB キーヤー（Arduino Keyer などの Winkey 互換キーヤー）を使用して、CW（電信）の移動運用およびロギングを大幅に効率化するためのツールです。また、ICOM IC-705 との Bluetooth 直接接続にも対応しており、外付けキーヤーなしでもスマートフォンと無線機だけで手軽に運用が可能です。アプリを起動すると初期設定画面が表示されますので各項目を入力してください。設定は保存されて次回起動時は最後に設定したものが表示されます。「設定を保存して定型文設定」または「設定を保存してはじめる」をタップするとメイン画面に遷移します。</p>
 
     <!-- 目次（ナビゲーションリンク） -->
     <div class="toc">
         <div class="toc-title">目次</div>
         <ul>
             <li><a href="#main_screen">メイン画面の操作</a></li>
-            <li><a href="#usb_keyer">1. USBキーヤーの接続</a></li>
+            <li><a href="#connection_settings">1. キーヤー・トランシーバーの接続</a>
+                <ul>
+                    <li><a href="#usb_keyer">1-1. 外付け USB キーヤー（Winkey互換）の接続</a></li>
+                    <li><a href="#ic705_bt">1-2. IC-705 との Bluetooth 接続</a></li>
+                </ul>
+            </li>
             <li><a href="#keyboard_input">キーボード入力について</a></li>
             <li><a href="#record_qso">2. 交信の記録</a></li>
             <li><a href="#preset_tags">3. 定型文とタグ</a></li>
-            <li><a href="#pro_features">4. Pro版の機能（アプリ内購入）</a></li>
+            <li><a href="#hamlog_sync">4. Turbo HAMLOG とのログ同期（CwLogSync）</a></li>
+            <li><a href="#export_import">5. ログのエクスポートとインポート（CSV / ADIF）</a></li>
         </ul>
     </div>
 
@@ -155,72 +256,140 @@
         <div class="feature-item">
             <div class="feature-num">②</div>
             <div class="feature-content">
-                <div class="feature-title">接続</div>
-                <div class="feature-desc">USBキーヤー（Arduino Keyer等）とのシリアル通信を開始します。正常に接続すると青になります。</div>
+                <div class="feature-title">接続 / 切断ボタン</div>
+                <div class="feature-desc">USBキーヤーまたはIC-705との通信を開始・切断します。接続成功時はアイコンが青または緑色に点灯します。接続中にもう一度タップすると切断できます。</div>
             </div>
         </div>
         <div class="feature-item">
             <div class="feature-num">③</div>
             <div class="feature-content">
-                <div class="feature-title">STOP</div>
-                <div class="feature-desc">現在送信中のメッセージを直ちに中断します。</div>
+                <div class="feature-title">周波数・モード表示 &amp; 同期（IC-705接続時）</div>
+                <div class="feature-desc">IC-705接続時は、無線機側の現在周波数（MHz）とモードがリアルタイムで自動追従・表示されます。同期アイコンをタップすることで手動で再同期することも可能です。</div>
             </div>
         </div>
         <div class="feature-item">
             <div class="feature-num">④</div>
+            <div class="feature-content">
+                <div class="feature-title">STOP</div>
+                <div class="feature-desc">現在送信中のメッセージを直ちに中断・停止します。</div>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-num">⑤</div>
             <div class="feature-content">
                 <div class="feature-title">入力エリア</div>
                 <div class="feature-desc">HisCall（相手局）、Date/Time（交信日時）、RSTr（受信レポート）、NRr（受信エクスチェンジ）を入力・表示します。相手コールサインを入力したらCheckボタンをタップします。</div>
             </div>
         </div>
         <div class="feature-item">
-            <div class="feature-num">⑤</div>
+            <div class="feature-num">⑥</div>
             <div class="feature-content">
                 <div class="feature-title">Check</div>
-                <div class="feature-desc">コールサインの重複チェックを行い、日時を自動入力します。「チェックのみ」がオフの場合は、相手局への応答送信も行います。</div>
+                <div class="feature-desc">コールサインの重複交信（B4）チェックを行い、日時を自動入力します。「チェックのみ」がオフの場合は、相手局への応答送信も行います。</div>
             </div>
         </div>
         <div class="feature-item">
-            <div class="feature-num">⑥</div>
+            <div class="feature-num">⑦</div>
             <div class="feature-content">
                 <div class="feature-title">定型文ボタン</div>
                 <div class="feature-desc">設定画面であらかじめ登録した定型メッセージをワンタップで送信します。</div>
             </div>
         </div>
         <div class="feature-item">
-            <div class="feature-num">⑦</div>
+            <div class="feature-num">⑧</div>
             <div class="feature-content">
                 <div class="feature-title">メッセージ入力</div>
                 <div class="feature-desc">任意のテキストを入力して送信するためのエリアです。</div>
             </div>
         </div>
         <div class="feature-item">
-            <div class="feature-num">⑧</div>
+            <div class="feature-num">⑨</div>
             <div class="feature-content">
                 <div class="feature-title">送信</div>
                 <div class="feature-desc">メッセージ入力エリアに入力された内容を送信します。</div>
             </div>
         </div>
         <div class="feature-item">
-            <div class="feature-num">⑨</div>
+            <div class="feature-num">⑩</div>
             <div class="feature-content">
                 <div class="feature-title">登録・クリア</div>
-                <div class="feature-desc">「登録」で交信内容をログに保存し、「クリア」で入力内容をリセットします。</div>
+                <div class="feature-desc">「登録」で交信内容をログに保存し、「クリア」で入力内容をリセットします。B4判定時は重複二重登録を防ぐため「登録」ボタンが自動的に無効化（グレーアウト）されます。</div>
             </div>
         </div>
     </div>
 
-    <h2 id="usb_keyer">1. USBキーヤーの接続</h2>
-    <p>OTGアダプターなどを使用して、Arduino KeyerなどのWinkey互換キーヤーをデバイスに接続してください。接続後、画面右上の「接続」ボタンをタップすると通信が開始されます。</p>
+    <h2 id="connection_settings">1. キーヤー・トランシーバーの接続</h2>
+    <p>本アプリは「外付け USB キーヤー（Winkey互換）」を標準接続として設計されています。また、ICOM IC-705 をお持ちの場合は Bluetooth による直接接続にも対応しています。初期設定または画面右上のメニューから「接続設定」を開いて設定を行ってください。</p>
+
+    <h3 id="usb_keyer">1-1. 外付け USB キーヤー（Winkey互換）の接続 <span class="badge-standard">基本・標準</span></h3>
+    <p>OTG アダプターなどを使用して、Arduino Keyer などの Winkey 互換キーヤーをスマートフォンに USB 接続して使用する基本構成です。</p>
+
+    <div class="info-box">
+        <strong>USB キーヤー接続時の特長</strong>
+        <ul style="margin: 4px 0 0 0; padding-left: 18px;">
+            <li><strong>物理ツマミとスライダーの双方向同期</strong>：キーヤー本体のポテンショメータ（速度調整ツマミ）を回すと、アプリ画面上の WPM スライダーがリアルタイムに連動します。また、アプリ側でスライダーを操作してもキーヤーの速度が即座に変更されます。</li>
+            <li><strong>安定した CW 送出</strong>：Winkey 互換プロトコルにより、正確なタイミングで符号が送出されます。</li>
+        </ul>
+    </div>
+
+    <p><strong>【接続手順】</strong></p>
+    <ol class="step-list">
+        <li>OTG ケーブルまたは変換アダプターを使用して、USB キーヤーをスマートフォンの USB ポートに接続します。</li>
+        <li>アプリの「接続設定」画面で <strong>「外付け USB キーヤー」</strong> を選択します。</li>
+        <li>「USB接続」ボタンまたはメイン画面右上の接続ボタンをタップして通信を開始します。正常に接続されるとインジケーターが青色になります。</li>
+        <li>画面下部に WPM スライダーが表示され、ツマミやスライダーで速度調整しながら運用できます。</li>
+    </ol>
+
+    <h3 id="ic705_bt">1-2. IC-705 との Bluetooth 接続</h3>
+    <p>ICOM IC-705 とスマートフォンを Bluetooth でペアリングして直接接続するモードです。外付けキーヤーや接続ケーブルを用意することなく、スマートフォンから直接 CW の送出や交信コントロールが行えます。</p>
+
+    <div class="info-box">
+        <strong>IC-705 接続時の特長</strong>
+        <ul style="margin: 4px 0 0 0; padding-left: 18px;">
+            <li><strong>外付けキーヤー不要</strong>：スマートフォンから CI-V コマンド経由で IC-705 内蔵キーヤーへ直接 CW 送信指示を行います。</li>
+            <li><strong>周波数・モードの自動追随</strong>：IC-705 本体のダイヤルを回して周波数やモードを変更すると、アプリ画面の表示もリアルタイムに追従します。</li>
+            <li><strong>正確なバンド別 B4 判定</strong>：無線機から取得した現在の周波数帯（MHz帯）をもとに、同一バンドでの重複交信を自動判定します。</li>
+            <li>※IC-705接続時は、送信速度（WPM）は無線機本体の設定値が反映されるため、アプリ画面の WPM スライダーは自動的に非表示になります。</li>
+        </ul>
+    </div>
+
+    <p><strong>【接続手順】</strong></p>
+    <ol class="step-list">
+        <li><strong>事前ペアリング</strong>：
+            <ul>
+                <li>IC-705 本体の <code>MENU</code> → <code>SET</code> → <code>Bluetooth設定</code> で「Bluetooth」を ON にし、「ペアリング受信」にします。</li>
+                <li>スマートフォンの「設定」→「Bluetooth」を開き、検出された IC-705 をタップしてペアリングを完了させておきます。</li>
+            </ul>
+        </li>
+        <li><strong>アプリで接続設定</strong>：
+            <ul>
+                <li>アプリの「接続設定」画面を開きます。</li>
+                <li>接続モードで <strong>「IC-705 (Bluetooth 直接接続)」</strong> を選択します。</li>
+                <li>Bluetooth 権限の許可を求めるボタンが表示された場合はタップして許可します。</li>
+                <li>「対象トランシーバー」のドロップダウンメニューから、ペアリング済みの IC-705 を選択します。</li>
+            </ul>
+        </li>
+        <li><strong>接続開始</strong>：
+            <ul>
+                <li>「接続 (Connect)」ボタンをタップします。接続インジケーターが緑色（接続完了）に変われば完了です。</li>
+                <li>メイン画面上部に周波数とモードが表示され、CW 送信が可能になります。次回以降はメイン画面右上の接続アイコンをタップするだけで再接続できます。</li>
+            </ul>
+        </li>
+    </ol>
 
     <h2 id="keyboard_input">キーボード入力について</h2>
     <p>入力時にソフトキーボードが開いた際、アルファベット入力（英語キーボード）に切り替えて、上矢印のキー（Shiftキー）を2回連続でタップすると、大文字入力（Caps Lock）に固定されるため大変便利です。</p>
 
     <h2 id="record_qso">2. 交信の記録</h2>
-    <p>メイン画面で相手局のコールサインを入力し、「チェック」をタップすると「B4」の判定をし日時を自動で入力し相手のコールサイン、RSTを送出します。「チェックのみ」のチェックボックスがチェックされていると送出はしません。また、「B4」の場合は相手のコールサインとB4を送出します。RSTrやエクスチェンジを入力して「登録」ボタンのタップで交信ログが保存されます。Pro版（アプリ内購入）ではADIFやCSV形式でのエクスポートが可能です。</p>
+    <p>メイン画面で相手局のコールサインを入力し、「チェック」をタップすると同一バンド内での「B4（重複交信）」の判定を行い、現在日時を自動入力して相手局のコールサイン・RSTを送出します。</p>
+    <ul class="bullet-list">
+        <li><strong>チェックのみ</strong>：チェックボックスが ON の場合は、CW 送出は行わずに B4 チェックと日時入力のみを行います。</li>
+        <li><strong>B4判定時</strong>：既に交信済みの場合は相手コールサインと「B4」を送出し、二重登録を防止するため「登録」ボタンが自動的に無効化（グレーアウト）されます。</li>
+        <li><strong>ログの登録</strong>：RSTr（受信レポート）やエクスチェンジを入力して「登録」ボタンをタップすると、交信ログが端末内データベースに保存されます。登録完了後、送信レポート（RSTs）は自動的に「599」にリセットされます。</li>
+    </ul>
 
     <h2 id="preset_tags">3. 定型文とタグ</h2>
-    <p>「定型文設定」画面で、ボタンに割り当てる送信内容を編集できます。以下のタグを使用すると、入力された情報を自動的に埋め込むことができます：</p>
+    <p>「定型文設定」画面で、ボタンに割り当てる送信内容を編集できます。以下のタグを使用すると、入力された情報や無線機の状態を自動的に埋め込んで送出することができます：</p>
 
     <ul class="tag-list">
         <li class="tag-item">• <span class="tag-name">{MyCall}</span> 自局のコールサイン</li>
@@ -233,10 +402,68 @@
         <li class="tag-item">• <span class="tag-name">{POTA}</span> / <span class="tag-name">{SOTA}</span> POTA/SOTAリファレンス</li>
     </ul>
 
-    <h2 id="pro_features">4. Pro版の機能（アプリ内購入）</h2>
+    <h2 id="hamlog_sync">4. Turbo HAMLOG とのログ同期（CwLogSync）</h2>
+    <p>スマートフォンで記録した交信ログと、Windows PC の定番ログソフト「<strong>Turbo HAMLOG</strong>」を、USB ケーブル 1 本で<strong>完全オフライン・ワンクリックで相互同期</strong>できる専用連携ツール「<strong>CwLogSync</strong>」をご利用いただけます。</p>
+    <p>手動での CSV エクスポートやインポートの手間は一切不要で、ボタン 1 つで Turbo HAMLOG へ直接交信データが書き込まれます。</p>
+
+    <!-- CwLogSync ダウンロード案内カード -->
+    <div class="dl-card">
+        <div class="dl-card-header">📥 PC用同期ツール「CwLogSync」のダウンロード</div>
+        <p style="margin: 0; font-size: 13px;">以下の GitHub リリースページより最新版の ZIP ファイルをダウンロードし、任意のフォルダに解凍してご利用ください。</p>
+        <a class="dl-button" href="https://github.com/tubame1411/csv2hamlog-re/releases/tag/v1.1.0" target="_blank" rel="noopener noreferrer">
+            CwLogSync v1.1.0 をダウンロード (GitHub)
+        </a>
+        <div class="dl-link-text">URL: https://github.com/tubame1411/csv2hamlog-re/releases/tag/v1.1.0</div>
+    </div>
+
+    <div class="info-box">
+        <strong>CwLogSync 同期機能の特長</strong>
+        <ul style="margin: 4px 0 0 0; padding-left: 18px;">
+            <li><strong>完全オフライン同期</strong>：インターネット接続は不要。USB テザリングを利用して安全かつ高速にデータ転送を行います。</li>
+            <li><strong>完全ミラー同期</strong>：スマートフォンの未送信ログを HAMLOG へ登録した後、HAMLOG 側の最新全データ（PC側で修正・削除したデータやお名前、QTH等）をスマートフォン側へ書き戻します。</li>
+            <li><strong>移動先で過去ログを瞬時に参照</strong>：HAMLOG の全交信実績がスマートフォン内に保持されるため、電波の届かない山頂などの移動先でも、過去の交信実績（相手のお名前、QTH、B4判定）をオフラインで瞬時に参照できます。</li>
+            <li><strong>未送信ログの自動保護</strong>：スマートフォン側で新しく記録した未送信ログは、同期完了前に消えることがないよう安全に保護されます。</li>
+            <li><strong>自動バックアップ</strong>：同期直前に、HAMLOG フォルダ内のデータベース（*.hdb, *.mst 等）を日付付きで <code>CwLogSync_Backups/</code> フォルダへ自動退避します。</li>
+        </ul>
+    </div>
+
+    <p><strong>【日常の同期手順】</strong></p>
+    <ol class="step-list">
+        <li><strong>スマホと PC を接続</strong>：USB ケーブルでスマートフォンと PC を接続します。</li>
+        <li><strong>USBテザリングを ON</strong>：スマートフォンの「設定」または通知バーから <strong>「USBテザリング」</strong> を ON にします。</li>
+        <li><strong>スマホでアプリを起動</strong>：スマートフォン側で <strong>「CW Log」アプリを起動</strong> しておきます（アプリ起動中のみ待機状態となります）。</li>
+        <li><strong>HAMLOG を終了</strong>：PC の <strong>Turbo HAMLOG が起動している場合は終了</strong> します（※データ安全保護のため）。</li>
+        <li><strong>同期ツールを起動</strong>：PC で解凍したフォルダ内の <strong><code>CwLogSync.exe</code></strong> を起動します。</li>
+        <li><strong>同期の実行</strong>：接続ステータスが「<strong>● スマホ接続完了</strong>」に変わったら、<strong>「▶ スマホと同期を開始」</strong> ボタンをクリックします。</li>
+        <li>数秒で「同期完了！」と表示されます。PC の Turbo HAMLOG を起動し、データが正しく反映されていることをご確認ください。</li>
+    </ol>
+
+    <div class="warning-box">
+        <strong>❓「USBテザリング待機中...」から進まないときのチェックリスト</strong>
+        接続インジケーターが赤色のまま変わらない場合は、以下をご確認ください：
+        <ul style="margin: 4px 0 0 0; padding-left: 18px;">
+            <li><strong>スマートフォン側でアプリが起動していますか？</strong> アプリが起動している間のみ同期窓口がオープンします。</li>
+            <li><strong>USBテザリングが ON になっていますか？</strong> ケーブルを抜き差しすると自動で OFF になる機種があります。ONになっているか再確認してください。</li>
+            <li><strong>USBケーブルは通信対応ですか？</strong> 100円ショップ等の「充電専用ケーブル」では通信できません。データ通信対応のケーブルをお使いください。</li>
+        </ul>
+    </div>
+
+    <p><small>※初回起動時に Windows Defender の「WindowsによってPCが保護されました」画面が表示された場合は、「詳細情報」→「実行」をクリックしてください。</small></p>
+
+    <h2 id="export_import">5. ログのエクスポートとインポート（CSV / ADIF）</h2>
+    <p>PC 連携ツール（CwLogSync）を使用しないスタンドアローン運用や、他のログ管理ソフト・Web サービスとの連携、手動バックアップに利用できる標準機能です。</p>
     <ul class="bullet-list">
-        <li>ログのエクスポート（ADIF / ハムログCSV）</li>
-        <li>CSVファイルのインポート</li>
+        <li><strong>ログのエクスポート</strong>：
+            <ul>
+                <li><strong>Turbo HAMLOG 互換 CSV</strong>：Shift-JIS 形式の CSV ファイルとして書き出し、Turbo HAMLOG の CSV インポート機能へそのまま取り込み可能。</li>
+                <li><strong>ADIF（.adi）</strong>：世界標準のログ形式でエクスポートし、eQSL、LoTW、各種コンテスト集計ソフト等へインポート可能。</li>
+            </ul>
+        </li>
+        <li><strong>CSVファイルのインポート</strong>：
+            <ul>
+                <li>Turbo HAMLOG 等から書き出した過去ログ CSV（Shift-JIS）を選択して端末内に一括取り込み可能（同一交信の二重取り込み防止機能付き）。</li>
+            </ul>
+        </li>
     </ul>
 
 </body>
