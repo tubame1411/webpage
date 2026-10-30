@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordion();
   initMobileMenu();
   initBreakdownInteractions();
+  initScreenModeToggle();
 });
 
 /* ==========================================================================
@@ -288,5 +289,30 @@ function initBreakdownInteractions() {
       breakdownCards.forEach((c) => c.classList.remove('active'));
       card.classList.add('active');
     });
+  });
+}
+
+/* ==========================================================================
+   9. Screen Mode Toggle (Macro Show / Hide)
+   ========================================================================== */
+function initScreenModeToggle() {
+  const btnNormal = document.getElementById('btn-mode-normal');
+  const btnAll = document.getElementById('btn-mode-all');
+  const previewImg = document.getElementById('main-screen-preview');
+
+  if (!btnNormal || !btnAll || !previewImg) return;
+
+  btnNormal.addEventListener('click', () => {
+    btnNormal.classList.add('active');
+    btnAll.classList.remove('active');
+    previewImg.src = 'images/main_screen.png';
+    previewImg.alt = 'CW Log メイン画面 (通常・マクロ表示)';
+  });
+
+  btnAll.addEventListener('click', () => {
+    btnAll.classList.add('active');
+    btnNormal.classList.remove('active');
+    previewImg.src = 'images/main_screen_all.png';
+    previewImg.alt = 'CW Log メイン画面 (マクロ非表示・全体ログ表示)';
   });
 }

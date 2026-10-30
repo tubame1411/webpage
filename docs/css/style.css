@@ -1540,3 +1540,44 @@ body {
     gap: 10px;
   }
 }
+
+/* --- Screen Mode Selector (Macro Toggle) --- */
+.screen-mode-selector {
+  display: flex;
+  background: var(--bg-surface-hover);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: 320px;
+}
+
+.screen-mode-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.screen-mode-btn:hover {
+  color: var(--text-primary);
+}
+
+.screen-mode-btn.active {
+  background: var(--brand-blue);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(25, 118, 210, 0.3);
+}

@@ -152,7 +152,13 @@
       </div>
       <ul class="toc-list">
         <li class="toc-item"><a href="#section-1">1. はじめに・主な特長</a></li>
-        <li class="toc-item"><a href="#section-2">2. 必要な機器と接続準備</a></li>
+        <li class="toc-item">
+          <a href="#section-2">2. 必要な機器と接続準備</a>
+          <ul class="toc-sublist">
+            <li><a href="#section-2-1">2.1 USBキーヤー接続 (OTG有線)</a></li>
+            <li><a href="#section-2-2">2.2 IC-705 Bluetooth接続 (ワイヤレス)</a></li>
+          </ul>
+        </li>
         <li class="toc-item">
           <a href="#section-3">3. アプリの画面構成と基本操作</a>
           <ul class="toc-sublist">
@@ -162,6 +168,8 @@
             <li><a href="#section-3-4">3.4 交信ログ画面</a></li>
             <li><a href="#section-3-5">3.5 エクスポート画面</a></li>
             <li><a href="#section-3-6">3.6 CSVインポート</a></li>
+            <li><a href="#section-3-7">3.7 PC連携ツール「csv2hamlog」</a></li>
+            <li><a href="#section-3-8">3.8 接続設定画面</a></li>
           </ul>
         </li>
         <li class="toc-item"><a href="#section-4">4. 定型文マクロとプロサイン</a></li>
@@ -280,11 +288,16 @@
         <div class="section-header">
           <span class="section-number">Chapter 2</span>
           <h2 class="section-title">必要な機器と接続準備</h2>
-          <p class="section-lead">スマートフォンのUSB-OTG機能を利用してCWキーヤーと接続します</p>
+          <p class="section-lead">USB有線キーヤー接続、またはIC-705とのBluetoothワイヤレス接続に対応しています</p>
         </div>
 
-        <div class="hardware-flow">
-          <h3 style="font-size:1.1rem; margin-bottom:12px; font-weight:700;">ハードウェア接続構成図</h3>
+        <p style="margin-bottom: 24px;">
+          本アプリ「CW Log」は、外付けの<strong>USBキーヤー（Arduino Keyer等のWinkey互換機）</strong>による有線制御と、<strong>IC-705とのBluetoothワイヤレス直接接続</strong>（CI-V通信）の2つの接続方式をサポートしています。
+        </p>
+
+        <!-- Hardware Flow: USB Keyer -->
+        <div class="hardware-flow" style="margin-bottom: 24px;">
+          <h3 style="font-size:1.1rem; margin-bottom:12px; font-weight:700;">構成パターン①: USBキーヤー有線接続</h3>
           <div class="diagram-row">
             <div class="diagram-node">
               <div class="diagram-node-icon">📱</div>
@@ -321,55 +334,129 @@
           </div>
         </div>
 
-        <div class="callout callout-warning">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="12" y1="8" x2="12" y2="12"></line>
-            <line x1="12" y1="16" x2="12.01" y2="16"></line>
-          </svg>
-          <div>
-            <strong>注意（ケーブルの選定）:</strong>
-            100円ショップ等で販売されているケーブルの中には「充電専用」が存在します。充電専用ケーブルではキーヤーと通信できません。必ず<strong>「充電・データ通信両対応」</strong>のUSBケーブルまたはOTGアダプターをご使用ください。
+        <!-- Hardware Flow: IC-705 Bluetooth -->
+        <div class="hardware-flow" style="margin-bottom: 32px; background: linear-gradient(135deg, rgba(25, 118, 210, 0.05), rgba(56, 189, 248, 0.08));">
+          <h3 style="font-size:1.1rem; margin-bottom:12px; font-weight:700; color: var(--brand-blue);">構成パターン②: IC-705 Bluetoothワイヤレス接続（ケーブル不要）</h3>
+          <div class="diagram-row">
+            <div class="diagram-node" style="border-color: var(--brand-blue);">
+              <div class="diagram-node-icon">📱</div>
+              <div class="diagram-node-title">Android端末</div>
+              <div class="diagram-node-desc">Bluetooth対応スマートフォン</div>
+            </div>
+            <div class="diagram-arrow">
+              <span style="color:var(--brand-blue); font-weight:700;">Bluetooth (CI-V)</span>
+              <span>➔ 📡 ➔</span>
+            </div>
+            <div class="diagram-node" style="border-color: var(--brand-blue);">
+              <div class="diagram-node-icon">📻</div>
+              <div class="diagram-node-title">IC-705</div>
+              <div class="diagram-node-desc">外付けキーヤー・OTG配線一切不要</div>
+            </div>
           </div>
         </div>
 
-        <h3 class="subsection-title">接続手順</h3>
-        <ol class="step-list">
-          <li class="step-item">
-            <div class="step-text">
-              <h4>Android端末にUSB-OTGアダプターを装着</h4>
-              <p>スマートフォンの端子にOTGアダプターを差し込み、USBケーブルで外付けのWinkey互換キーヤーを接続します。スマートフォン、キーヤーそれぞれに適した接続方法で接続してください</p>
+        <!-- 2.1 USB Keyer -->
+        <div id="section-2-1" class="subsection" style="margin-top: 32px;">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">2.1</span> USBキーヤー接続 (OTG有線) の手順
+          </h3>
+
+          <div class="callout callout-warning">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div>
+              <strong>注意（ケーブルの選定）:</strong>
+              100円ショップ等で販売されているケーブルの中には「充電専用」が存在します。充電専用ケーブルではキーヤーと通信できません。必ず<strong>「充電・データ通信両対応」</strong>のUSBケーブルまたはOTGアダプターをご使用ください。
             </div>
-          </li>
-          <li class="step-item">
-            <div class="step-text">
-              <h4>「CW Log」アプリを起動</h4>
-              <p>アプリを起動します。初期設定画面またはメイン画面が開きます。</p>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-text">
-              <h4>画面上部の「接続」ボタンをタップ</h4>
-              <p>画面右上にあるグレー色の <span
-                  style="background:#6b7280; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続</span>
-                ボタンをタップします。</p>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-text">
-              <h4>USBデバイスへのアクセスを許可</h4>
-              <p>初回接続時、Androidのシステムから「USBデバイスへのアクセスを許可しますか？」という確認ダイアログが表示されます。<strong>「OK」</strong>をタップします。</p>
-            </div>
-          </li>
-          <li class="step-item">
-            <div class="step-text">
-              <h4>接続完了（青色「接続中」に変化）</h4>
-              <p>キーヤーとシリアル通信ハンドシェイクが成立すると、ボタンが青色の <span
-                  style="background:#1976d2; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続中</span>
-                に変化します。これでキーヤー制御の準備が整いました。</p>
-            </div>
-          </li>
-        </ol>
+          </div>
+
+          <ol class="step-list">
+            <li class="step-item">
+              <div class="step-text">
+                <h4>Android端末にUSB-OTGアダプターを装着</h4>
+                <p>スマートフォンの端子にOTGアダプターを差し込み、USBケーブルで外付けのWinkey互換キーヤーを接続します。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>「CW Log」アプリを起動</h4>
+                <p>アプリを起動します。画面左上のメニュー「接続設定」で「USBキーヤー」が選択されていることを確認します（初期設定）。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>画面右上の「接続」ボタンをタップ</h4>
+                <p>画面右上にあるグレー色の <span
+                    style="background:#6b7280; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続</span>
+                  ボタンをタップします。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>USBデバイスへのアクセスを許可</h4>
+                <p>初回接続時、Androidのシステムから「USBデバイスへのアクセスを許可しますか？」という確認ダイアログが表示されます。<strong>「OK」</strong>をタップします。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>接続完了（青色「接続中」に変化）</h4>
+                <p>キーヤーとシリアル通信ハンドシェイクが成立すると、ボタンが青色の <span
+                    style="background:#1976d2; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続中</span>
+                  に変化します。これでキーヤー制御の準備が整いました。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- 2.2 IC-705 Bluetooth -->
+        <div id="section-2-2" class="subsection" style="margin-top: 48px;">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">2.2</span> IC-705 Bluetooth接続 (ワイヤレス) の手順
+          </h3>
+          <p>
+            アイコム製トランシーバー「<strong>IC-705</strong>」の内蔵Bluetooth機能を使用し、CI-Vプロトコル経由でワイヤレス接続します。外付けキーヤーや接続ケーブルが一切不要になり、超身軽な移動運用スタイルを実現できます。
+          </p>
+
+          <ol class="step-list">
+            <li class="step-item">
+              <div class="step-text">
+                <h4>IC-705本体のBluetoothをONにし、ペアリング待機</h4>
+                <p>IC-705のMENU ➔ SET ➔ Bluetooth設定 からBluetoothをONにし、ペアリング待機状態にします。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>AndroidスマートフォンのBluetooth設定でペアリング</h4>
+                <p>スマートフォンの「設定」➔「Bluetooth」を開き、検出された「IC-705」を選択してあらかじめペアリング（機器登録）を完了させておきます。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>「CW Log」アプリの「接続設定」でIC-705を選択</h4>
+                <p>アプリ画面左上のハンバーガーメニュー（三本線）をタップし、「<strong>接続設定</strong>」を開きます（詳細は <a href="#section-3-8" style="color:var(--brand-blue); text-decoration:underline;">3.8 接続設定画面</a> を参照）。「<strong>IC-705 (Bluetooth)</strong>」を選択し、一覧からペアリング済みのIC-705を指定します。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>画面右上の「接続」ボタンをタップ</h4>
+                <p>メイン画面右上のグレー色 <span
+                    style="background:#6b7280; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続</span>
+                  ボタンをタップします。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>接続完了（青色「接続中」に変化）</h4>
+                <p>Bluetooth接続が確立すると、ボタンが青色の <span
+                    style="background:#1976d2; color:#fff; padding:2px 8px; border-radius:4px; font-size:0.85rem; font-weight:700;">接続中</span>
+                  に変化します。定型文マクロボタンやCheckボタンをタップすると、CI-V経由でIC-705からCWが直接送出されます。送信を途中で止めたい時は赤色の「<strong>STOP</strong>」ボタンで即座に中断できます。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
       </section>
 
 
@@ -402,7 +489,7 @@
             <h4 style="margin-bottom: 8px; font-size: 1.05rem;">画面左上のメニューから各画面へワンタップ移動</h4>
             <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
               画面左上のハンバーガーアイコン（<strong>三本線</strong>）をタップするとドロワーメニューが表示されます。
-              メイン画面、定型文設定、初期設定、交信ログ、エクスポート機能（アプリ内購入）、CSVインポート、ヘルプなど、全画面へいつでも自由に移動できます。
+              メイン画面、接続設定、定型文設定、初期設定、交信ログ、エクスポート機能（アプリ内購入）、CSVインポート、利用規約など、全画面へいつでも自由に移動できます。
             </p>
           </div>
         </div>
@@ -422,11 +509,30 @@
           <!-- Interactive Showcase -->
           <div class="interactive-showcase">
 
-            <!-- Left: Mockup Phone Frame with main_screen.png -->
+            <!-- Left: Mockup Phone Frame with main_screen.png & main_screen_all.png -->
             <div class="phone-mockup-wrapper">
+              <!-- Mode Switcher Buttons -->
+              <div class="screen-mode-selector" aria-label="画面表示モード切り替え">
+                <button type="button" class="screen-mode-btn active" id="btn-mode-normal" title="標準（マクロボタン表示）">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  マクロ表示
+                </button>
+                <button type="button" class="screen-mode-btn" id="btn-mode-all" title="「マクロを隠す」タップ時（全画面ログ表示）">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                  マクロを隠す
+                </button>
+              </div>
+
               <div class="phone-mockup">
                 <div class="phone-notch"></div>
-                <img src="images/main_screen.png" alt="CW Log メイン画面 (番号付き)" class="phone-screen-img zoomable-img"
+                <img src="images/main_screen.png" alt="CW Log メイン画面 (通常・マクロ表示)" class="phone-screen-img zoomable-img"
                   id="main-screen-preview" title="クリックして大画面で拡大">
               </div>
               <div class="phone-hint">
@@ -434,7 +540,7 @@
                   <circle cx="11" cy="11" r="8"></circle>
                   <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
-                画像クリックで高解像度拡大表示
+                クリックで拡大 | 上のボタンで切替
               </div>
             </div>
 
@@ -522,7 +628,9 @@
                 </div>
                 <div class="breakdown-body">
                   4行×4列の16個のマクロボタン。ワンタップで定義したメッセージを即時送信します。
-                  ボタン1（CQ）は自動リピート送出に対応。その他、DE, GREET, UR, TU, AGN, ?, BT, AR, KN, VAなどの標準CWプロサインに対応しています。
+                  ボタン1（CQ）は自動リピート送出に対応。その他、DE, GREET, UR, TU, AGN, ?, BT, AR, KN, VAなどの標準CWプロサインに対応しています。<br>
+                  <span style="display:inline-block; margin-top:8px; color:var(--brand-blue); font-weight:600;">💡 マクロの表示／非表示（全体ログ表示）の切替:</span><br>
+                  画面中央の「<strong>マクロを隠す</strong>」をタップするとマクロ領域が折りたたまれ、交信ログが広々と全体表示（全画面表示）に切り替わります（左上の「マクロを隠す」ボタンで切り替えてご確認いただけます）。再度「マクロを表示」をタップすると元のマクロ表示に戻ります。
                 </div>
               </div>
 
@@ -833,6 +941,169 @@
                     <li>過去のログを取り込んでおくことで、移動運用中のB4チェック（交信済み判定）が極めて強力になります。</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.7 PC連携ツール「csv2hamlog」
+             ============================================================ -->
+        <div id="section-3-7" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.7</span> PC連携ツール「csv2hamlog」
+          </h3>
+          <p>
+            「<strong>csv2hamlog</strong>」は、「<strong>CW Log for portable operation</strong>」の交信ログデータをPCの「<strong>Turbo HAMLOG/Win（ハムログ）</strong>」と同期するためのWindows専用連携ツール（フリーウェア／作者：tubame1411）です。
+          </p>
+
+          <div class="screen-card" style="margin-top: 16px;">
+            <div class="screen-card-header">
+              <h4>🛠️ 主な機能</h4>
+            </div>
+            <div class="screen-card-body">
+              <ul style="padding-left:18px; line-height:1.8;">
+                <li><strong>スマホとの双方向同期</strong>: PCとAndroidスマートフォンをUSBケーブルで接続し、テザリング経由で交信ログを相互に同期します。移動先で記録した新着ログの取り込みや、HAMLOG側の修正・削除内容をスマホ側へ反映できます。</li>
+                <li><strong>各種CSVインポート</strong>: FT8ログ（WSJT-X / JTDX）やコンテストログ（Ctestwin）などのCSVファイルをTurbo HAMLOGへ取り込む機能も備えています。</li>
+                <li><strong>バックアップ機能</strong>: 同期や登録の直前にデータベースの自動バックアップを作成します。</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Download & Quick Install Box -->
+          <div class="card-grid" style="margin-top: 20px;">
+            <div class="feature-card" style="border: 2px solid var(--brand-blue-border); background: var(--bg-surface);">
+              <div class="feature-icon-box" style="background: var(--brand-blue-subtle); color: var(--brand-blue);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </div>
+              <h3>ダウンロード</h3>
+              <p style="margin-bottom: 16px;">最新バージョンは以下のGitHubリリースページより無料でダウンロードできます。</p>
+              <a href="https://github.com/tubame1411/csv2hamlog-re/releases" target="_blank" rel="noopener noreferrer"
+                class="btn btn-primary" style="display:inline-flex; align-items:center; gap:8px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                csv2hamlog ダウンロード (GitHub)
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h3>インストール方法</h3>
+              <p style="line-height: 1.8;">
+                配布されている<strong>ZIPファイルをダウンロードしてお好みのフォルダーに解凍（展開）するだけ</strong>でそのままご利用いただけます（インストーラーの実行やレジストリ登録は不要です）。
+              </p>
+            </div>
+          </div>
+
+          <div class="callout callout-info" style="margin-top: 20px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <div>
+              <strong>詳しい使い方について:</strong><br>
+              各機能の詳細な設定方法、列マッピング、スマホ同期手順、バックアップ仕様等は、<strong>解凍したフォルダーに同梱されている <code>README.md</code></strong> をご確認ください。
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             3.8 接続設定画面
+             ============================================================ -->
+        <div id="section-3-8" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.8</span> 接続設定画面 (Connection Settings)
+          </h3>
+          <p>
+            IC-705とのBluetoothワイヤレス接続や、外付けUSBキーヤーとの接続方式を選択・管理する画面です。
+            画面左上のメニュー（三本線）から「<strong>接続設定</strong>」をタップして開きます。
+          </p>
+
+          <div class="screen-layout-split">
+            <!-- App Screen Real Screenshot for Connection Settings -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/conection_setting_screen.png" alt="CW Log 接続設定画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
+              </div>
+            </div>
+
+            <!-- Connection Settings Features -->
+            <div class="card-grid" style="margin:0;">
+              <div class="feature-card">
+                <div class="feature-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="4"></circle>
+                  </svg>
+                </div>
+                <h3>1. 接続方式の選択</h3>
+                <p>
+                  「<strong>IC-705 (Bluetooth 直接接続)</strong>」または「<strong>外付け USB キーヤー</strong>」をラジオボタンで切り替えます。選択した方式に応じて下の設定カードが切り替わります。
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6.5 6.5l11 11L12 23V1l5.5 5.5-11 11"></path>
+                  </svg>
+                </div>
+                <h3>2. IC-705 (Bluetooth) 設定</h3>
+                <p>
+                  <strong>接続状態インジケーター</strong>（未接続・接続中・接続完了）で状態を確認可能。ペアリング済み機器の選択、更新ボタン、権限許可、接続／切断ボタンがまとまっています。
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                    <rect x="9" y="9" width="6" height="6"></rect>
+                  </svg>
+                </div>
+                <h3>3. 外付け USB キーヤー設定</h3>
+                <p>
+                  USBキーヤー選択時に表示されます。USB接続ステータスやキーヤーのファームウェアバージョン情報（K1EL Winkey互換認識など）の確認と、手動での接続／切断が可能です。
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                </div>
+                <h3>4. 通信アクティビティログ</h3>
+                <p>
+                  画面下部に配置されたリアルタイムログです。BluetoothやUSBの接続状態の変化、CI-V送受信、エラーメッセージがタイムスタンプ付きで出力され、状況の把握に役立ちます。
+                </p>
               </div>
             </div>
           </div>
@@ -1155,6 +1426,23 @@
             </button>
             <div class="faq-answer">
               USBキーヤーとのシリアル通信ハンドシェイクが完了していません。画面右上のボタンが青色「接続中」になっているかご確認ください。一度ケーブルを抜き差しして再度「接続」ボタンをタップしてください。
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Q4. IC-705とBluetooth接続ができない / デバイス一覧に表示されない</span>
+              <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <ul>
+                <li><strong>確認1:</strong> スマートフォン本体の「設定」➔「Bluetooth」であらかじめ「IC-705」とのペアリングが完了しているかご確認ください。アプリ内ではペアリング済みの機器のみが選択候補に表示されます。</li>
+                <li><strong>確認2:</strong> IC-705側のBluetooth機能およびCI-V設定が有効になっているかご確認ください。</li>
+                <li><strong>確認3:</strong> Androidのアプリ権限で、「付近のデバイス」や「Bluetooth」の権限がアプリに許可されているかご確認ください。</li>
+              </ul>
             </div>
           </div>
 
