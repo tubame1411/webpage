@@ -162,6 +162,7 @@
             <li><a href="#section-3-4">3.4 交信ログ画面</a></li>
             <li><a href="#section-3-5">3.5 エクスポート</a></li>
             <li><a href="#section-3-6">3.6 CSVインポート</a></li>
+            <li><a href="#section-3-7">3.7 CSV2hamlog連携 (スマホ同期)</a></li>
           </ul>
         </li>
         <li class="toc-item"><a href="#section-4">4. 定型文マクロとプロサイン</a></li>
@@ -859,7 +860,7 @@
             <div class="card-grid" style="margin:0;">
               <div class="feature-card">
                 <h3>会員名簿CSVの取り込み ＆ Checkヒット表示</h3>
-                <p>自作の会員名簿CSVを作成・インポートしておくことで、メイン画面で相手局のコールサインを入力して<strong>「Check」ボタンをタップした際、名簿にヒットすると画面上に会員情報（Name, Code, QTH, Remarks）が瞬時に表示</strong>されます。クラブ員や記念アワード対象局の判別に威力を発揮します。</p>
+                <p>convertCsvAndTxtなどを使用して自作の会員名簿CSVを作成・インポートしておくことで、メイン画面で相手局のコールサインを入力して<strong>「Check」ボタンをタップした際、名簿にヒットすると画面上に会員情報（Name, Code, QTH, Remarks）が瞬時に表示</strong>されます。</p>
               </div>
               <div class="feature-card">
                 <h3>会員名簿CSVの作成仕様</h3>
@@ -886,6 +887,71 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- ============================================================
+             3.7 PC連携ツール「CSV2hamlog」との連携（スマホ同期）
+             ============================================================ -->
+        <div id="section-3-7" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.7</span> PC連携ツール「CSV2hamlog」との連携（スマホ同期）
+          </h3>
+          <p>
+            Windows用デスクトップ連携ツール<strong>「CSV2hamlog」</strong>（フリーウェア）を使用することで、USBテザリング経由でスマートフォン内の「CW Log」とPCの「Turbo HAMLOG」を<strong>完全オフライン同期</strong>できます。クラウドやメールを介さず、ワンクリックで移動運用ログの追記と最新全ログの同期が完了します。
+          </p>
+
+          <div class="card-grid" style="margin: 1.5rem 0;">
+            <div class="feature-card">
+              <h3>⚡ 完全オフライン＆ワンクリック同期</h3>
+              <p>PCとスマホをUSBケーブルで繋ぎ、スマホの「USBテザリング」をONにするだけで準備完了。インターネット環境がなくても、USB経由のダイレクト通信で超高速にデータの転送・同期を行います。</p>
+            </div>
+            <div class="feature-card">
+              <h3>🔄 新着ログ登録 ＆ PCマスター同期の仕組み</h3>
+              <p>
+                <strong>① スマホ ➔ Turbo HAMLOG（新着登録）</strong>: 移動先で新規記録した<strong>未送信ログのみ</strong>を、公式 <code>HAMLOG50.DLL</code> を介して Turbo HAMLOG へ自動追記します。<br>
+                <strong>② Turbo HAMLOG ➔ スマホ（最新ログ同期）</strong>: <strong>PC側（マスターデータ）</strong>の全交信履歴をスマホへ最新同期。次回の移動先でも最新データでB4判定や過去交信照合が可能です。
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>🛡️ 安心の自動バックアップ＆安全設計</h3>
+              <p>同期実行の直前に、Turbo HAMLOG 本体のデータベースを自動でバックアップ（最新3世代保持）。また、Turbo HAMLOG 本体の起動中は二重起動・競合防止チェックが働き、大切なログデータを確実に保護します。</p>
+            </div>
+          </div>
+
+          <div class="callout callout-warning" style="margin: 1.5rem 0;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div>
+              <strong>重要（過去ログの修正・削除について）:</strong>
+              本連携では<strong>「PCの Turbo HAMLOG」がマスター（正本データ）</strong>として管理されます。過去ログの氏名・QTHの補正やログの削除は、必ず<strong>PCの Turbo HAMLOG 側</strong>で行ってください（スマホ側で過去ログを編集してもPC側へは反映されず、同期実行時にPC側の内容で上書きされます）。
+            </div>
+          </div>
+
+          <h4 class="subsection-title" style="font-size: 1.15rem; margin-top: 2rem;">同期の手順（簡単3ステップ）</h4>
+          <ol class="step-list">
+            <li class="step-item">
+              <div class="step-text">
+                <h4>1. PC とスマホを USB 接続 ＆ テザリング有効化</h4>
+                <p>スマートフォンと PC をデータ通信対応の USB ケーブルで接続し、スマホの設定画面で<strong>「USBテザリング」を ON</strong> にします。続いて、スマートフォンで<strong>「CW Log」アプリを起動</strong>した状態にしておきます（アプリ起動中に自動で同期受信用サーバーが待受開始します）。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>2. PC で「CSV2hamlog」を起動</h4>
+                <p>PC 上で <code>csv2hamlog.exe</code> を起動します。<br>
+                ※データベースの競合・不整合を防ぐため、<strong>Turbo HAMLOG 本体が起動している場合は終了</strong>しておいてください。</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-text">
+                <h4>3. 「CW Log スマホ同期」タブから同期を実行</h4>
+                <p>CSV2hamlog 画面上部の<strong>「📱 CW Log スマホ同期」</strong>タブを選択します。接続ステータスが<strong>「● スマホ接続完了」</strong>と表示されたら、<strong>「▶ スマホと同期を開始」</strong>ボタンをクリックします。自動バックアップ作成後、数秒〜数十秒で新着交信の登録と過去全ログのスマホ同期が完了します。</p>
+              </div>
+            </li>
+          </ol>
         </div>
 
       </section>
