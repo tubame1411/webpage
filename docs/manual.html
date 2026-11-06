@@ -160,7 +160,7 @@
             <li><a href="#section-3-2">3.2 定型文設定画面</a></li>
             <li><a href="#section-3-3">3.3 メイン画面 (詳細)</a></li>
             <li><a href="#section-3-4">3.4 交信ログ画面</a></li>
-            <li><a href="#section-3-5">3.5 エクスポート画面</a></li>
+            <li><a href="#section-3-5">3.5 エクスポート</a></li>
             <li><a href="#section-3-6">3.6 CSVインポート</a></li>
           </ul>
         </li>
@@ -508,6 +508,7 @@
                     <li><strong>不確かなコール (?機能)</strong>: 末尾に <code>?</code> が付いている場合（例:
                       <code>JA1?</code>）はコールサイン＋？のみ送出して確認。
                     </li>
+                    <li><strong>会員名簿ヒット表示</strong>: 会員名簿CSVを取り込んでいる場合、該当する会員情報（お名前、コード、QTH、備考等）がヒットすると画面に表示。</li>
                     <li><strong>自動フォーカス移動</strong>: 自動的に受領レポート欄（RSTr）にカーソルが移動します。</li>
                   </ul>
                 </div>
@@ -781,13 +782,13 @@
         </div>
 
         <!-- ============================================================
-             3.5 & 3.6 エクスポート & インポート
+             3.5 エクスポート
              ============================================================ -->
         <div id="section-3-5" class="subsection">
           <h3 class="subsection-title">
-            <span style="color:var(--brand-blue);">3.5</span> エクスポート画面 & <span
-              style="color:var(--brand-blue);">3.6</span> CSVインポート
+            <span style="color:var(--brand-blue);">3.5</span> エクスポート (Export)
           </h3>
+          <p>端末内の交信ログをTurbo HAMLOG互換CSVや世界標準ADIF形式で外部ファイルに出力する画面です。</p>
 
           <div class="screen-layout-split">
             <!-- App Screen Real Screenshot for Export -->
@@ -806,33 +807,82 @@
               </div>
             </div>
 
-            <!-- Export and Import Feature Description Cards -->
-            <div class="screen-showcase-grid" style="margin:0;">
-              <div class="screen-card">
-                <div class="screen-card-header">
-                  <h4>📁 エクスポート機能 (Export)</h4>
-                </div>
-                <div class="screen-card-body">
-                  <ul style="padding-left:18px; line-height:1.7;">
-                    <li><strong>Turbo HAMLOG互換CSV</strong>: Shift-JIS形式で出力され、PCのHAMLOGにそのまま取り込み可能。</li>
-                    <li><strong>世界標準ADIF形式 (.adi)</strong>: LoTW、eQSL、各種アワード申請、他のログソフトで使用できるUTF-8標準形式。</li>
-                    <li><strong>安全なフィルター機能</strong>: 「インポート済みデータを除外」「エクスポート済みデータを除外」をチェックすることで二重出力を完全防止。</li>
-                    <li><strong>日付指定出力</strong>: 運用日ごとにチェックを入れて必要なログのみをファイル出力。</li>
-                  </ul>
-                </div>
+            <!-- Features Cards for Export -->
+            <div class="card-grid" style="margin:0;">
+              <div class="feature-card">
+                <h3>Turbo HAMLOG互換CSV</h3>
+                <p>Shift-JIS形式で出力され、PCのTurbo HAMLOGにそのまま取り込み可能です。</p>
               </div>
+              <div class="feature-card">
+                <h3>世界標準ADIF形式 (.adi)</h3>
+                <p>LoTW、eQSL、各種アワード申請、他のログソフト等で利用できるUTF-8標準形式で出力します。</p>
+              </div>
+              <div class="feature-card">
+                <h3>二重出力防止フィルター</h3>
+                <p>「インポート済みデータを除外」「エクスポート済みデータを除外」をチェックすることで、同一ログの二重出力を確実に防止できます。</p>
+              </div>
+              <div class="feature-card">
+                <h3>日付指定エクスポート</h3>
+                <p>運用日ごとにチェックを入れて、必要な運用日のログだけを選択してファイル出力できます。</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <div class="screen-card">
-                <div class="screen-card-header">
-                  <h4>📥 CSVインポート機能 (Import CSV)</h4>
-                </div>
-                <div class="screen-card-body">
-                  <ul style="padding-left:18px; line-height:1.7;">
-                    <li>Turbo HAMLOGから出力したCSVファイル（Shift-JIS）を選択して端末内に取り込み可能。</li>
-                    <li><strong>自動重複スキップ</strong>: 同一局・同一日・同一バンド・同一モードの交信は自動で検出され、重複登録を防止します。</li>
-                    <li>過去のログを取り込んでおくことで、移動運用中のB4チェック（交信済み判定）が極めて強力になります。</li>
-                  </ul>
-                </div>
+        <!-- ============================================================
+             3.6 CSVインポート
+             ============================================================ -->
+        <div id="section-3-6" class="subsection">
+          <h3 class="subsection-title">
+            <span style="color:var(--brand-blue);">3.6</span> CSVインポート (Import CSV)
+          </h3>
+          <p>Turbo HAMLOG等から書き出した交信ログや、クラブ等の会員名簿CSVをアプリ内に取り込む画面です。インポート種別（会員名簿 / 交信ログ）を選択して取り込みます。</p>
+
+          <div class="screen-layout-split">
+            <!-- App Screen Real Screenshot for Import -->
+            <div class="phone-mockup-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <img src="images/import_screen.png" alt="CW Log CSVインポート画面" class="phone-screen-img zoomable-img"
+                  title="クリックして拡大">
+              </div>
+              <div class="phone-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                クリックで拡大表示
+              </div>
+            </div>
+
+            <!-- Features Cards for Import -->
+            <div class="card-grid" style="margin:0;">
+              <div class="feature-card">
+                <h3>会員名簿CSVの取り込み ＆ Checkヒット表示</h3>
+                <p>自作の会員名簿CSVを作成・インポートしておくことで、メイン画面で相手局のコールサインを入力して<strong>「Check」ボタンをタップした際、名簿にヒットすると画面上に会員情報（Name, Code, QTH, Remarks）が瞬時に表示</strong>されます。クラブ員や記念アワード対象局の判別に威力を発揮します。</p>
+              </div>
+              <div class="feature-card">
+                <h3>会員名簿CSVの作成仕様</h3>
+                <p>カンマ区切りのテキスト形式で以下の列順で作成します：<br>
+                  <code>Callsign, Name, Code, QTH, Remarks</code><br>
+                  例: <code>JA1ABC,TARO,1001,東京都千代田区,クラブ員</code><br>
+                  ※画面下の「ファイルを選択してインポート」から読み込み、「会員データをクリア」でいつでもリセット可能です。
+                </p>
+              </div>
+              <div class="feature-card">
+                <h3>Turbo HAMLOG 交信ログの取り込み</h3>
+                <p>インポート種別を「交信ログ (csv)」に切り替えることで、Turbo HAMLOG等から出力した過去ログ（Shift-JIS形式）を取り込めます。同一局・同一日・同一バンド・同一モードの重複データは自動スキップされます。</p>
+              </div>
+              <div class="feature-card">
+                <h3>交信ログCSVのファイル仕様</h3>
+                <p>Turbo HAMLOG標準のCSVエクスポート形式（Shift-JIS / カンマ区切り）に対応しています：<br>
+                  <code>Callsign, Date, Time, RSTs, RSTr, Freq/Band, Mode, Code, GL, QSL, Name, QTH, Remarks1, Remarks2</code><br>
+                  ※Turbo HAMLOGの「オプション」→「データ移行」→「CSVファイルへ出力」で書き出したファイルや、本アプリからエクスポートしたTurbo HAMLOG互換CSVをそのまま指定して取り込めます。
+                </p>
+              </div>
+              <div class="feature-card">
+                <h3>移動運用のB4チェックをサポート</h3>
+                <p>事前に過去ログを取り込んでおくことで、電波の届かない山頂や移動先などの完全オフライン環境でも、即座に重複交信（B4判定）が行えます。</p>
               </div>
             </div>
           </div>
